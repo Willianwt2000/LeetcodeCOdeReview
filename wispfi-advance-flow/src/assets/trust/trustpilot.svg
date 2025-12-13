@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="40" viewBox="0 0 160 40" role="img" aria-labelledby="title desc">
+  <title>Trustpilot (Placeholder)</title>
+  <desc>Placeholder Trustpilot badge. Replace with official asset when available.</desc>
+  <rect x="0.5" y="0.5" width="159" height="39" rx="6" fill="#ffffff" stroke="#d5d7dd" />
+  <g transform="translate(12,10)">
+    <polygon points="8,0 10.5,6.5 17.5,7 12,11.5 13.5,18 8,14.5 2.5,18 4,11.5 -1.5,7 5.5,6.5" fill="#00b67a" />
+  </g>
+  <g transform="translate(44,14)" fill="#1a1f36">
+    <text x="0" y="12" font-family="Open Sans, Arial, sans-serif" font-size="14" font-weight="700">TRUSTPILOT</text>
+  </g>
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="56" viewBox="0 0 180 56" role="img" aria-labelledby="title desc">
+  <title>BBB Accredited Business (Placeholder)</title>
+  <desc>Placeholder badge to be replaced with official BBB asset.</desc>
+  <rect x="0.5" y="0.5" width="179" height="55" rx="8" fill="#ffffff" stroke="#d5d7dd" />
+  <g transform="translate(12,10)">
+    <rect width="36" height="36" rx="6" fill="#0b66c3" />
+    <circle cx="18" cy="14" r="6" fill="#ffffff" opacity="0.9" />
+    <rect x="14" y="22" width="8" height="8" rx="2" fill="#ffffff" opacity="0.9" />
+  </g>
+  <g transform="translate(60,14)" fill="#1a1f36">
+    <text x="0" y="12" font-family="Open Sans, Arial, sans-serif" font-size="14" font-weight="700">BBB ACCREDITED</text>
+    <text x="0" y="32" font-family="Open Sans, Arial, sans-serif" font-size="14" font-weight="700">BUSINESS</text>
+  </g>
+</svg>
