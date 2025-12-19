@@ -9,10 +9,10 @@ import MCAFormAPI from "@/components/wispfi/MCAFormAPI";
 interface PrequalModalProps {
   open: boolean;
   onOpenChange: (o: boolean) => void;
-  formType?: 'general' | 'ef';
+  formType?: "general" | "ef";
 }
 
-export const PrequalModal = ({ open, onOpenChange, formType = 'general' }: PrequalModalProps) => {
+export const PrequalModal = ({ open, onOpenChange, formType = "general" }: PrequalModalProps) => {
   const location = useLocation();
   const { t } = useTranslation();
 
@@ -21,9 +21,11 @@ export const PrequalModal = ({ open, onOpenChange, formType = 'general' }: Prequ
       {open && (
         <DialogContent className="sm:max-w-xl w-[95vw] max-w-[700px] p-3 sm:p-6 rounded-2xl overflow-y-auto max-h-[90vh] mx-auto">
           <DialogHeader>
-            <DialogTitle>{formType === 'ef' ? t('components.prequalModal.titleEF') : t('components.prequalModal.titleGeneral')}</DialogTitle>
+            <DialogTitle>
+              {formType === "ef" ? t("components.prequalModal.efTitle") : t("components.prequalModal.efTitle")}
+            </DialogTitle>
           </DialogHeader>
-          {formType === 'ef' ? (
+          {formType === "ef" ? (
             <FormShellMCA variant="ef">
               {typeof window !== "undefined" && !location.pathname.includes("/equipment-financing") ? (
                 <div>EF form blocked outside /equipment-financing</div>

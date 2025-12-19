@@ -15,35 +15,30 @@ export const BlogPreview = () => {
     <section className="py-16 bg-muted">
       <div className="container">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">{t('components.blogPreview.title')}</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            {t('components.blogPreview.subtitle')}
-          </p>
+          <h2 className="text-3xl font-bold mb-4">{t("components.blogPreview.title")}</h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">{t("components.blogPreview.subtitle")}</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          {latestPosts.map(post => (
+          {latestPosts.map((post) => (
             <Card key={post.id} className="h-full flex flex-col hover:shadow-lg transition-shadow">
               <div className="aspect-video overflow-hidden rounded-t-lg">
-                      <img
-                        src={post.image}
-                        alt={post.alt}
+                <img
+                  src={post.image}
+                  alt={post.alt}
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <CardHeader className="flex-1">
-                <Badge variant="secondary" className="w-fit mb-2">{post.category}</Badge>
+                <Badge variant="secondary" className="w-fit mb-2">
+                  {post.category}
+                </Badge>
                 <h3 className="text-lg font-semibold line-clamp-2 mb-2">
-                  <Link 
-                    to={`/blog/${post.slug}`}
-                    className="hover:text-primary transition-colors"
-                  >
+                  <Link to={`/blog/${post.slug}`} className="hover:text-primary transition-colors">
                     {post.title}
                   </Link>
                 </h3>
-                <p className="text-muted-foreground line-clamp-2 text-sm">
-                  {post.excerpt}
-                </p>
+                <p className="text-muted-foreground line-clamp-2 text-sm">{post.excerpt}</p>
               </CardHeader>
               <CardContent className="pt-0">
                 <div className="flex items-center justify-between text-xs text-muted-foreground mb-3">
@@ -56,23 +51,23 @@ export const BlogPreview = () => {
                     {post.readTime}
                   </div>
                 </div>
-                <TrackedButton 
-                  size="sm" 
+                <TrackedButton
+                  size="sm"
                   href={`/blog/${post.slug}`}
                   className="w-full"
                   trackingData={{
-                    action: 'blog_preview_read',
-                    category: 'content',
+                    action: "blog_preview_read",
+                    category: "content",
                     label: post.slug,
-                    source: 'homepage_blog_preview'
+                    source: "homepage_blog_preview",
                   }}
                   utmParams={{
-                    source: 'homepage',
-                    medium: 'blog_preview',
-                    campaign: 'blog_engagement'
+                    source: "homepage",
+                    medium: "blog_preview",
+                    campaign: "blog_engagement",
                   }}
                 >
-                  {t('components.blogPreview.readMore')}
+                  {t("components.blogPreview.readMore")}
                 </TrackedButton>
               </CardContent>
             </Card>
@@ -80,22 +75,22 @@ export const BlogPreview = () => {
         </div>
 
         <div className="text-center">
-          <TrackedButton 
-            variant="outline" 
+          <TrackedButton
+            variant="brandBlue"
             href="/blog"
             trackingData={{
-              action: 'view_all_blog',
-              category: 'navigation',
-              label: 'homepage_blog_preview',
-              source: 'homepage_blog_preview'
+              action: "view_all_blog",
+              category: "navigation",
+              label: "homepage_blog_preview",
+              source: "homepage_blog_preview",
             }}
             utmParams={{
-              source: 'homepage',
-              medium: 'blog_preview_cta',
-              campaign: 'blog_navigation'
+              source: "homepage",
+              medium: "blog_preview_cta",
+              campaign: "blog_navigation",
             }}
           >
-            {t('components.blogPreview.viewAll')}
+            {t("components.blogPreview.viewAll")}
           </TrackedButton>
         </div>
       </div>

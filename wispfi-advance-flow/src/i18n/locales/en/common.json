@@ -12,6 +12,48 @@
     "menu": "Menu",
     "language": "Language"
   },
+  "formShell": {
+    "trust": {
+      "bbbRating": "A+ BBB Rating",
+      "fundedCount": "15K+ Funded",
+      "sslEncrypted": "SSL Encrypted",
+      "ccpaCompliant": "CCPA Compliant",
+      "infoNeverShared": "🔒 Your information is never shared"
+    },
+    "mca": {
+      "pillBanner": "$2M+ FUNDING • LIMITED TIME",
+      "headline": "Check Your Eligibility • ",
+      "headlineAccent": "Quick process • No credit hit",
+      "subhead": "No personal credit check to start • No collateral required",
+      "proofLine": "⚡ Join 15,000+ funded businesses with A+ BBB rating",
+      "greenTileTitle": "Up to $2M",
+      "greenTileSubtitle": "Most get $50K-$2M",
+      "blueTileTitle": "Quick Decision (Subject to approval)",
+      "blueTileSubtitle": "Funding as soon as 1-2 business days"
+    },
+    "ef": {
+      "pillBanner": "$2M+ Equipment Financing • Limited Time",
+      "headline": "Apply for Equipment Financing",
+      "headlineAccent": "",
+      "subhead": "Financing from $10,000 up to $2,000,000 • Quick online application • Approvals as fast as 24–48 hours",
+      "proofLine": "⚡ Join 1,000+ equipment buyers who've closed in under 5 days",
+      "greenTileTitle": "Equipment Line up to $2M***",
+      "greenTileSubtitle": "Most get $50K–$2M",
+      "blueTileTitle": "Quick Decision (Subject to approval)",
+      "blueTileSubtitle": "As soon as 1–2 business days"
+    },
+    "mca-b": {
+      "headline": "",
+      "headlineAccent": "",
+      "pillBanner": "",
+      "proofLine": "",
+      "subhead": "Secure form • Check eligibility quickly • No obligation",
+      "greenTileTitle": "Up to $2M",
+      "greenTileSubtitle": "Most get $50K-$2M",
+      "blueTileTitle": "Quick Decision (Subject to approval)",
+      "blueTileSubtitle": "Funding as soon as 1-2 business days"
+    }
+  },
   "meta": {
     "index": {
       "title": "WispFi MCA Funding | Funding available in as little as 24–48 hours*",
@@ -99,9 +141,10 @@
   },
   "hero": {
     "preHeadline": "Fast Working Capital • No Collateral",
-    "headline": "Fast, Flexible Funding for Small Businesses — Your Growth Starts Here.",
-    "subHeadline": "Funding available in as little as 24–48 hours* — no collateral, no stress.",
-    "socialProof": "More than 2,000 business owners secured $5K–$5M for cash flow, equipment and vendors with no waiting in bank lines.",
+    "headline": "Fast, Flexible Funding for  Businesses.",
+    "headline2": "Your Growth Starts Here.",
+    "subHeadline": "Funding available in as little as 24–48 hours no collateral, no stress.",
+    "socialProof": "2,000+ businesses secured $5K–$5M without waiting in banks",
     "businessOwnerSmiling": "Business owner smiling"
   },
   "whoQualifies": {
@@ -257,6 +300,22 @@
       "limitedTime": "Limited Time: Extended $2M Funding Available",
       "finalCta": "Don't wait for traditional bank approvals. Join thousands of businesses that chose fast, flexible funding to fuel their growth."
     }
+  },
+  "dealer": {
+    "title": "Dealer vs Private Party Purchases",
+    "subtitle": "We work with both purchase types to get you the equipment you need",
+    "dealerTab": "Dealer Purchase",
+    "privateTab": "Private Party",
+    "dealerCardTitle": "Dealer Purchases",
+    "dealerPoint1": "Streamlined process with established vendors",
+    "dealerPoint2": "Warranty and service support included",
+    "dealerPoint3": "Faster approval and funding",
+    "dealerPoint4": "Direct payment to dealer",
+    "privateCardTitle": "Private Party",
+    "privatePoint1": "Additional verification required",
+    "privatePoint2": "Equipment inspection may be needed",
+    "privatePoint3": "Title transfer documentation required",
+    "privatePoint4": "Competitive pricing opportunities"
   },
   "equipmentFinancing": {
     "value": {
@@ -850,8 +909,23 @@
     "bankLevelSecurity": "Bank-Level Security",
     "bbbAccredited": "BBB Accredited",
     "protectedInfo": "Your information is protected with enterprise-grade encryption. We're a trusted partner in the business funding industry.",
+    "expiresBadge": "Limited Time Offer",
+    "progress": "Progress",
+    "complete": "Complete",
+    "eligibleTrue": "Congratulations! You're Eligible",
+    "eligibleTrueDesc": "Based on your information, you qualify for our funding programs.",
+    "eligibleFalse": "Application Received",
+    "eligibleFalseDesc": "We need more information to finish processing your application.",
+    "eligibleDefault": "Thank You",
+    "eligibleDefaultDesc": "Your application has been received.",
+    "socialProof": "Trusted by 15,000+ Businesses",
+    "deployedThisWeek": "$5M+ Deployed This Week",
+    "joinTitle": "Join 15,000+ Funded Businesses",
+    "joinSubtitle": "See why businesses trust WispFi for their funding needs.",
+    "totalFunding": "Total Funding Provided",
+    "avgFundingTime": "Average Funding Time",
     "whatToExpect": "What to Expect on the Call",
-    "reviewNeeds": "Review your funding needs",
+    "reviewNeeds": "Review your funding need",
     "reviewNeedsDesc": "We'll discuss your specific business requirements and funding goals.",
     "discussOptions": "Discuss tailored options",
     "discussOptionsDesc": "We'll present customized financing solutions that fit your business.",
@@ -875,40 +949,16 @@
       "trucking": {
         "heroTitle": "Keep Your Fleet Moving Forward",
         "heroSubtitle": "Fast, reliable funding for trucks, trailers, and operations.",
-        "challenges": [
-          "High equipment costs",
-          "Fuel price fluctuations",
-          "Seasonal demand"
-        ],
-        "useCases": [
-          "Semi-truck purchases",
-          "Equipment maintenance",
-          "Fuel advances"
-        ],
-        "solutions": [
-          "Equipment financing",
-          "Working capital",
-          "Flexible terms"
-        ]
+        "challenges": ["High equipment costs", "Fuel price fluctuations", "Seasonal demand"],
+        "useCases": ["Semi-truck purchases", "Equipment maintenance", "Fuel advances"],
+        "solutions": ["Equipment financing", "Working capital", "Flexible terms"]
       },
       "salons": {
         "heroTitle": "Beautiful Funding for Your Beauty Business",
         "heroSubtitle": "Fast, flexible funding for equipment, renovations, and expansion.",
-        "challenges": [
-          "Equipment upgrades",
-          "Seasonal demand",
-          "Inventory management"
-        ],
-        "useCases": [
-          "Salon chairs",
-          "Spa equipment",
-          "Renovations"
-        ],
-        "solutions": [
-          "Equipment financing",
-          "Working capital",
-          "Flexible terms"
-        ]
+        "challenges": ["Equipment upgrades", "Seasonal demand", "Inventory management"],
+        "useCases": ["Salon chairs", "Spa equipment", "Renovations"],
+        "solutions": ["Equipment financing", "Working capital", "Flexible terms"]
       },
       "contractors": {
         "heroTitle": "Build Your Business with Reliable Funding",
@@ -953,7 +1003,9 @@
     "exploreIndustries": "Explore Other Industries",
     "readSuccessStories": "Read Success Stories",
     "learnAboutFunding": "Learn About Funding",
-    "disclaimer": "Approval and funding times vary by applicant and are subject to underwriting approval. WispFi is not a bank. Terms and conditions apply."
+    "disclaimer": "Approval and funding times vary by applicant and are subject to underwriting approval. WispFi is not a bank. Terms and conditions apply.",
+    "phoneNumber": "(818) 858-0184",
+    "emailAddress": "sales@wispfi.com"
   },
   "caseStudies": {
     "pageTitle": "Real Results, Real Businesses",
@@ -1188,7 +1240,11 @@
     "within24HoursDesc": "Personal call to discuss your funding options",
     "within48Hours": "Within 48 hours",
     "within48HoursDesc": "Funding deposited to your business account",
-    "avgFundingTime": "Average funding time:"
+    "avgFundingTime": "Average funding time:",
+    "phoneNumber": "(818) 858-0184",
+    "emailAddress": "sales@wispfi.com",
+    "businessHoursLine1": "Mon-Fri: 9AM-6PM EST",
+    "businessHoursLine2": "Sat: 10AM-4PM EST"
   },
   "thankYouCommon": {
     "fundingDecisionDesc": "Accept your offer and funds can be deposited as early as 1–2 business days (subject to approval).",
@@ -1221,7 +1277,9 @@
     "questionsOrConcerns": "Questions or Concerns?",
     "emailResponse": "Email us and we'll respond within 2 hours",
     "typicalResponse": "We typically respond within 2 hours",
-    "finalReassurance": "We're excited to connect with you and help you grow. Keep your phone handy — your dedicated funding specialist will be calling soon."
+    "finalReassurance": "We're excited to connect with you and help you grow. Keep your phone handy — your dedicated funding specialist will be calling soon.",
+    "supportPhone": "1-800-WISPFI-1",
+    "supportEmail": "support@wispfi.com"
   },
   "components": {
     "exitIntentModal": {
@@ -1236,7 +1294,7 @@
       "googleReviews": "Google Reviews",
       "trustpilot": "Trustpilot",
       "disclaimer": "Ratings based on aggregated customer feedback across multiple platforms.",
-      "typicalFundingValue": "~72 hrs"
+      "typicalFundingValue": "~48 hrs"
     },
     "trustSecurity": {
       "sslSecure": "SSL Secure",
@@ -1305,7 +1363,7 @@
         "highlight": "and affordably"
       },
       "subheadline": "Payable over time • No hidden fees",
-      "disclaimer": "*Timeframes vary by business and require approval.",
+      "disclaimer": "Timeframes vary by business and require approval.",
       "socialProof": "Join 1,000+ equipment buyers who've closed in under 5 days",
       "cta": {
         "checkOptions": "Check Equipment Financing Options",
@@ -1328,7 +1386,7 @@
         "businessDetails": "Business Details"
       },
       "labels": {
-        "businessName": "Name",
+        "businessName": "Business Name",
         "timeInBusiness": "Time in business?",
         "timeInBusinessHint": "(Minimum 1 year)",
         "firstName": "First Name",
@@ -1578,7 +1636,10 @@
     "reviewsSection": {
       "title": "What Our Clients Say",
       "subtitle": "Real businesses, real results",
-      "verifiedClient": "Verified Client"
+      "verifiedClient": "Verified Client",
+      "review1Text": "WispFi helped us expand from 500 to 2,000 customers in 18 months. Their funding made our growth possible.",
+      "review2Text": "The application process was incredibly fast and the team really understood our unique business model.",
+      "review3Text": "We were able to upgrade our equipment and improve service reliability thanks to the quick funding."
     },
     "reviewsCarousel": {
       "badge": "Join 15,000+ funded businesses",
@@ -1649,7 +1710,7 @@
       "quote5": "We needed to expand our fleet quickly to meet demand. Approval was fast and funding was handled professionally."
     },
     "qualificationCriteria": {
-      "title": "Is Your Business Eligible for Fast MCA Funding?",
+      "title": "Is Your Business Eligible for Fast Equipment Financing?",
       "subtitle": "Most established businesses qualify. Check the requirements below:",
       "minimumRequirements": "Minimum Requirements",
       "idealCandidates": "Ideal Candidates",
@@ -1671,7 +1732,7 @@
       "idealProfitableDesc": "Positive cash flow demonstrates stability",
       "approvalRateValue": "85%+",
       "approvalRate": "Approval Rate",
-      "avgDecisionValue": "24-48hrs",
+      "avgDecisionValue": "24-48 hrs",
       "avgDecision": "Avg Decision",
       "fundingRangeValue": "$5K-$5M",
       "fundingRange": "Funding Range",

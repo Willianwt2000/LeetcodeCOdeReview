@@ -1,5 +1,5 @@
-import { useEffect } from 'react';
-import { useAnalytics } from '@/hooks/useAnalytics';
+import { useEffect } from "react";
+import { useAnalytics } from "@/hooks/useAnalytics";
 
 export const AdvancedAnalytics = () => {
   const { trackEvent } = useAnalytics();
@@ -9,8 +9,8 @@ export const AdvancedAnalytics = () => {
     const trackPageLoadTime = () => {
       const loadTime = Math.round(performance.now());
       trackEvent({
-        action: 'page_load_time',
-        category: 'performance',
+        action: "page_load_time",
+        category: "performance",
         value: loadTime,
       });
     };
@@ -21,15 +21,15 @@ export const AdvancedAnalytics = () => {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
       const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
       const scrollPercent = Math.round((scrollTop / scrollHeight) * 100);
-      
+
       if (scrollPercent > maxScrollPercent) {
         maxScrollPercent = scrollPercent;
-        
+
         // Track at 25%, 50%, 75%, 100%
         if ([25, 50, 75, 100].includes(scrollPercent)) {
           trackEvent({
-            action: 'scroll_depth',
-            category: 'engagement',
+            action: "scroll_depth",
+            category: "engagement",
             label: `${scrollPercent}%`,
             value: scrollPercent,
           });
@@ -42,27 +42,31 @@ export const AdvancedAnalytics = () => {
     const trackTimeOnPage = () => {
       const timeOnPage = Math.round((Date.now() - startTime) / 1000);
       trackEvent({
-        action: 'time_on_page',
-        category: 'engagement',
+        action: "time_on_page",
+        category: "engagement",
         value: timeOnPage,
       });
     };
 
     // Track form interactions
     const trackFormInteractions = () => {
-      document.querySelectorAll('form').forEach((form, index) => {
-        form.addEventListener('focusin', () => {
-          trackEvent({
-            action: 'form_start',
-            category: 'conversion',
-            label: form.id || `form_${index}`,
-          });
-        }, { once: true });
+      document.querySelectorAll("form").forEach((form, index) => {
+        form.addEventListener(
+          "focusin",
+          () => {
+            trackEvent({
+              action: "form_start",
+              category: "conversion",
+              label: form.id || `form_${index}`,
+            });
+          },
+          { once: true },
+        );
 
-        form.addEventListener('submit', () => {
+        form.addEventListener("submit", () => {
           trackEvent({
-            action: 'form_submit',
-            category: 'conversion',
+            action: "form_submit",
+            category: "conversion",
             label: form.id || `form_${index}`,
           });
         });
@@ -72,13 +76,13 @@ export const AdvancedAnalytics = () => {
     // Track CTA clicks
     const trackCTAClicks = () => {
       document.querySelectorAll('button, a[href*="eligibility"], a[href*="apply"]').forEach((el) => {
-        el.addEventListener('click', () => {
-          const text = el.textContent?.trim() || '';
-          const href = (el as HTMLAnchorElement).href || '';
-          
+        el.addEventListener("click", () => {
+          const text = el.textContent?.trim() || "";
+          const href = (el as HTMLAnchorElement).href || "";
+
           trackEvent({
-            action: 'cta_click',
-            category: 'conversion',
+            action: "cta_click",
+            category: "conversion",
             label: text,
             source: window.location.pathname,
             campaign: href,
@@ -93,8 +97,8 @@ export const AdvancedAnalytics = () => {
       if (!hasTrackedExitIntent && e.clientY <= 0) {
         hasTrackedExitIntent = true;
         trackEvent({
-          action: 'exit_intent',
-          category: 'engagement',
+          action: "exit_intent",
+          category: "engagement",
           source: window.location.pathname,
         });
       }
@@ -104,17 +108,17 @@ export const AdvancedAnalytics = () => {
     setTimeout(trackPageLoadTime, 1000);
     trackFormInteractions();
     trackCTAClicks();
-    
+
     // Add event listeners
-    window.addEventListener('scroll', trackScrollDepth, { passive: true });
-    window.addEventListener('beforeunload', trackTimeOnPage);
-    document.addEventListener('mouseleave', trackExitIntent);
+    window.addEventListener("scroll", trackScrollDepth, { passive: true });
+    window.addEventListener("beforeunload", trackTimeOnPage);
+    document.addEventListener("mouseleave", trackExitIntent);
 
     // Cleanup
     return () => {
-      window.removeEventListener('scroll', trackScrollDepth);
-      window.removeEventListener('beforeunload', trackTimeOnPage);
-      document.removeEventListener('mouseleave', trackExitIntent);
+      window.removeEventListener("scroll", trackScrollDepth);
+      window.removeEventListener("beforeunload", trackTimeOnPage);
+      document.removeEventListener("mouseleave", trackExitIntent);
     };
   }, [trackEvent]);
 

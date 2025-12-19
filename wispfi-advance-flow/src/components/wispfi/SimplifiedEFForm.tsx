@@ -20,38 +20,33 @@ interface FormData {
 
 const equipmentTypes = [
   "Restaurant/Kitchen Equipment",
-  "Medical/Dental Equipment", 
+  "Medical/Dental Equipment",
   "Construction Equipment",
   "Manufacturing Equipment",
   "IT/Technology Equipment",
   "Transportation/Fleet",
   "Agricultural Equipment",
   "Fitness/Gym Equipment",
-  "Other Equipment"
+  "Other Equipment",
 ];
 
 const fundingAmounts = [
   "$5,000 - $25,000",
-  "$25,000 - $50,000", 
+  "$25,000 - $50,000",
   "$50,000 - $100,000",
   "$100,000 - $250,000",
   "$250,000 - $500,000",
-  "$500,000+"
+  "$500,000+",
 ];
 
-const businessAges = [
-  "6 months - 1 year",
-  "1 - 2 years",
-  "2 - 5 years", 
-  "5+ years"
-];
+const businessAges = ["6 months - 1 year", "1 - 2 years", "2 - 5 years", "5+ years"];
 
 const revenueRanges = [
   "$10K - $25K/month",
   "$25K - $50K/month",
-  "$50K - $100K/month", 
+  "$50K - $100K/month",
   "$100K - $250K/month",
-  "$250K+/month"
+  "$250K+/month",
 ];
 
 export const SimplifiedEFForm = ({ onSubmit, className = "" }: SimplifiedEFFormProps) => {
@@ -59,64 +54,64 @@ export const SimplifiedEFForm = ({ onSubmit, className = "" }: SimplifiedEFFormP
     equipmentType: "",
     fundingAmount: "",
     businessAge: "",
-    monthlyRevenue: ""
+    monthlyRevenue: "",
   });
 
   const [currentStep, setCurrentStep] = useState(0);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const steps = [
-    { 
-      field: 'equipmentType', 
-      title: 'What equipment do you need financing for?',
+    {
+      field: "equipmentType",
+      title: "What equipment do you need financing for?",
       icon: Building2,
-      options: equipmentTypes
+      options: equipmentTypes,
     },
-    { 
-      field: 'fundingAmount', 
-      title: 'How much financing do you need?',
+    {
+      field: "fundingAmount",
+      title: "How much financing do you need?",
       icon: DollarSign,
-      options: fundingAmounts
+      options: fundingAmounts,
     },
-    { 
-      field: 'businessAge', 
-      title: 'How long have you been in business?',
+    {
+      field: "businessAge",
+      title: "How long have you been in business?",
       icon: Calendar,
-      options: businessAges
+      options: businessAges,
     },
-    { 
-      field: 'monthlyRevenue', 
-      title: 'What\'s your monthly revenue?',
+    {
+      field: "monthlyRevenue",
+      title: "What's your monthly revenue?",
       icon: Calculator,
-      options: revenueRanges
-    }
+      options: revenueRanges,
+    },
   ];
 
   const handleNext = () => {
     if (currentStep < steps.length - 1) {
-      setCurrentStep(prev => prev + 1);
+      setCurrentStep((prev) => prev + 1);
     } else {
       handleSubmit();
     }
   };
 
   const handleBack = () => {
-    setCurrentStep(prev => Math.max(0, prev - 1));
+    setCurrentStep((prev) => Math.max(0, prev - 1));
   };
 
   const handleSubmit = async () => {
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     setTimeout(() => {
       onSubmit?.(formData);
       // Redirect to thank you page or show success message
-      window.location.href = '/thank-you-ef';
+      window.location.href = "/thank-you-ef";
     }, 1000);
   };
 
   const updateFormData = (field: string, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
+    setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
   const currentStepData = steps[currentStep];
@@ -128,11 +123,13 @@ export const SimplifiedEFForm = ({ onSubmit, className = "" }: SimplifiedEFFormP
         {/* Progress indicator */}
         <div className="mb-6">
           <div className="flex justify-between text-sm text-muted-foreground mb-2">
-            <span>Step {currentStep + 1} of {steps.length}</span>
+            <span>
+              Step {currentStep + 1} of {steps.length}
+            </span>
             <span>{Math.round(progress)}% Complete</span>
           </div>
           <div className="w-full bg-muted rounded-full h-2">
-            <div 
+            <div
               className="bg-primary h-2 rounded-full transition-all duration-300 ease-out"
               style={{ width: `${progress}%` }}
             />
@@ -171,27 +168,17 @@ export const SimplifiedEFForm = ({ onSubmit, className = "" }: SimplifiedEFFormP
         {/* Navigation buttons */}
         <div className="flex gap-2">
           {currentStep > 0 && (
-            <Button 
-              variant="outline" 
-              onClick={handleBack}
-              className="flex-1"
-            >
+            <Button variant="outline" onClick={handleBack} className="flex-1">
               Back
             </Button>
           )}
-          <Button 
-            variant="cta" 
+          <Button
+            variant="cta"
             onClick={handleNext}
             disabled={!formData[currentStepData.field as keyof FormData] || isSubmitting}
             className="flex-1"
           >
-            {isSubmitting ? (
-              "Processing..."
-            ) : currentStep === steps.length - 1 ? (
-              "Get My Quote"
-            ) : (
-              "Continue"
-            )}
+            {isSubmitting ? "Processing..." : currentStep === steps.length - 1 ? "Get My Quote" : "Continue"}
           </Button>
         </div>
 
@@ -212,9 +199,7 @@ export const SimplifiedEFForm = ({ onSubmit, className = "" }: SimplifiedEFFormP
                 <span>4.8/5 Rating</span>
               </div>
             </div>
-            <p className="text-xs text-muted-foreground text-center">
-              No impact to your credit score to check options
-            </p>
+            <p className="text-xs text-muted-foreground text-center">No impact to your credit score to check options</p>
           </div>
         )}
       </CardContent>

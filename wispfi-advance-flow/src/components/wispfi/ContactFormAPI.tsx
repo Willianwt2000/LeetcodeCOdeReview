@@ -11,7 +11,6 @@ import { useAnalytics } from "@/hooks/useAnalytics";
 // import RecaptchaV2 from "./RecaptchaV2";
 import { getLeadSourceFromCookie } from "@/lib/attribution";
 
-
 import { useTranslation } from "react-i18next";
 import { FORM_IDS, PORTAL_ID } from "@/config/formIds";
 
@@ -39,19 +38,12 @@ const initial: State = {
   website: "",
 };
 
-const SERVICES = [
-  "Equipment Financing",
-  "Working Capital",
-  "Business Loan",
-  "Line of Credit",
-  "General Consultation"
-];
-
+const SERVICES = ["Equipment Financing", "Working Capital", "Business Loan", "Line of Credit", "General Consultation"];
 
 function getCookie(name: string) {
   return document.cookie
     .split("; ")
-    .find(c => c.startsWith(name + "="))
+    .find((c) => c.startsWith(name + "="))
     ?.split("=")[1];
 }
 
@@ -80,11 +72,10 @@ function toHsFields(s: State) {
 }
 
 export default function ContactFormAPI() {
-
   const { t, i18n } = useTranslation();
 
   // Obtener el ID según el idioma actual (fallback a inglés si no existe)
-  const currentFormId = i18n.language === 'es' ? FORM_IDS.contact.es : FORM_IDS.contact.en;
+  const currentFormId = i18n.language === "es" ? FORM_IDS.contact.es : FORM_IDS.contact.en;
   // Construir la URL dinámicamente
   const submitUrl = `https://api.hsforms.com/submissions/v3/integration/submit/${PORTAL_ID}/${currentFormId}`;
 
@@ -95,7 +86,9 @@ export default function ContactFormAPI() {
   // const [recaptchaToken, setRecaptchaToken] = useState<string>("");
   const { trackEvent } = useAnalytics();
 
-  useEffect(() => { window.dataLayer = window.dataLayer || []; }, []);
+  useEffect(() => {
+    window.dataLayer = window.dataLayer || [];
+  }, []);
 
   const isFormValid = useMemo(() => {
     return (
@@ -113,15 +106,15 @@ export default function ContactFormAPI() {
     let value = e.target.value;
 
     // Format phone number as user types
-    if (k === 'phone') {
+    if (k === "phone") {
       value = formatPhoneNumber(value);
     }
 
-    setForm(prev => ({ ...prev, [k]: value }));
+    setForm((prev) => ({ ...prev, [k]: value }));
   };
 
   const onSelectChange = (k: keyof State) => (value: string) => {
-    setForm(prev => ({ ...prev, [k]: value }));
+    setForm((prev) => ({ ...prev, [k]: value }));
   };
 
   async function onSubmit(e: React.FormEvent) {
@@ -153,7 +146,6 @@ export default function ContactFormAPI() {
         },
       };
 
-
       const res = await fetch(submitUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -183,7 +175,7 @@ export default function ContactFormAPI() {
 
       setSent(true);
     } catch (e: any) {
-      setErr(e?.message ?? t('components.contactForm.submitError'));
+      setErr(e?.message ?? t("components.contactForm.submitError"));
     } finally {
       setLoading(false);
     }
@@ -195,7 +187,7 @@ export default function ContactFormAPI() {
       "Working Capital": "workingCapital",
       "Business Loan": "businessLoan",
       "Line of Credit": "lineOfCredit",
-      "General Consultation": "generalConsultation"
+      "General Consultation": "generalConsultation",
     };
     const key = map[service];
     return key ? t(`components.contactForm.services.${key}`) : service;
@@ -204,12 +196,10 @@ export default function ContactFormAPI() {
   if (sent) {
     return (
       <div className="text-center py-8">
-        <h3 className="text-2xl font-semibold mb-3 text-primary">{t('components.contactForm.success.title')}</h3>
-        <p className="text-muted-foreground mb-6">
-          {t('components.contactForm.success.message')}
-        </p>
+        <h3 className="text-2xl font-semibold mb-3 text-primary">{t("components.contactForm.success.title")}</h3>
+        <p className="text-muted-foreground mb-6">{t("components.contactForm.success.message")}</p>
         <Button onClick={() => setSent(false)} variant="outline">
-          {t('components.contactForm.success.button')}
+          {t("components.contactForm.success.button")}
         </Button>
       </div>
     );
@@ -230,29 +220,33 @@ export default function ContactFormAPI() {
       />
 
       <form onSubmit={onSubmit} className="space-y-4">
-        <h3 className="text-lg font-semibold text-center mb-4">{t('components.contactForm.title')}</h3>
+        <h3 className="text-lg font-semibold text-center mb-4">{t("components.contactForm.title")}</h3>
 
         <div className="grid grid-cols-2 gap-3">
           <div className="space-y-2">
-            <LabelWithAsterisk htmlFor="firstname" required>{t('components.contactForm.firstName')}</LabelWithAsterisk>
+            <LabelWithAsterisk htmlFor="firstname" required>
+              {t("components.contactForm.firstName")}
+            </LabelWithAsterisk>
             <Input
               id="firstname"
               type="text"
               value={form.firstname}
               onChange={onChange("firstname")}
-              placeholder={t('components.contactForm.firstNamePlaceholder')}
+              placeholder={t("components.contactForm.firstNamePlaceholder")}
               className={!form.firstname.trim() && form.firstname !== initial.firstname ? "border-destructive" : ""}
               required
             />
           </div>
           <div className="space-y-2">
-            <LabelWithAsterisk htmlFor="lastname" required>{t('components.contactForm.lastName')}</LabelWithAsterisk>
+            <LabelWithAsterisk htmlFor="lastname" required>
+              {t("components.contactForm.lastName")}
+            </LabelWithAsterisk>
             <Input
               id="lastname"
               type="text"
               value={form.lastname}
               onChange={onChange("lastname")}
-              placeholder={t('components.contactForm.lastNamePlaceholder')}
+              placeholder={t("components.contactForm.lastNamePlaceholder")}
               className={!form.lastname.trim() && form.lastname !== initial.lastname ? "border-destructive" : ""}
               required
             />
@@ -260,42 +254,48 @@ export default function ContactFormAPI() {
         </div>
 
         <div className="space-y-2">
-          <LabelWithAsterisk htmlFor="email" required>{t('components.contactForm.email')}</LabelWithAsterisk>
+          <LabelWithAsterisk htmlFor="email" required>
+            {t("components.contactForm.email")}
+          </LabelWithAsterisk>
           <Input
             id="email"
             type="email"
             value={form.email}
             onChange={onChange("email")}
-            placeholder={t('components.contactForm.emailPlaceholder')}
+            placeholder={t("components.contactForm.emailPlaceholder")}
             className={form.email && !isValidEmail(form.email) ? "border-destructive" : ""}
             required
           />
           {form.email && !isValidEmail(form.email) && (
-            <p className="text-sm text-destructive mt-1">{t('components.contactForm.emailError')}</p>
+            <p className="text-sm text-destructive mt-1">{t("components.contactForm.emailError")}</p>
           )}
         </div>
 
         <div className="space-y-2">
-          <LabelWithAsterisk htmlFor="phone" required>{t('components.contactForm.phone')}</LabelWithAsterisk>
+          <LabelWithAsterisk htmlFor="phone" required>
+            {t("components.contactForm.phone")}
+          </LabelWithAsterisk>
           <Input
             id="phone"
             type="tel"
             value={form.phone}
             onChange={onChange("phone")}
-            placeholder={t('components.contactForm.phonePlaceholder')}
+            placeholder={t("components.contactForm.phonePlaceholder")}
             className={form.phone && !isValidPhone(form.phone) ? "border-destructive" : ""}
             required
           />
           {form.phone && !isValidPhone(form.phone) && (
-            <p className="text-sm text-destructive mt-1">{t('components.contactForm.phoneError')}</p>
+            <p className="text-sm text-destructive mt-1">{t("components.contactForm.phoneError")}</p>
           )}
         </div>
 
         <div className="space-y-2">
-          <LabelWithAsterisk htmlFor="service_mca" required>{t('components.contactForm.service')}</LabelWithAsterisk>
+          <LabelWithAsterisk htmlFor="service_mca" required>
+            {t("components.contactForm.service")}
+          </LabelWithAsterisk>
           <Select onValueChange={onSelectChange("service_mca")} value={form.service_mca}>
             <SelectTrigger>
-              <SelectValue placeholder={t('components.contactForm.servicePlaceholder')} />
+              <SelectValue placeholder={t("components.contactForm.servicePlaceholder")} />
             </SelectTrigger>
             <SelectContent className="bg-background border border-border shadow-lg z-50">
               {SERVICES.map((service) => (
@@ -308,12 +308,14 @@ export default function ContactFormAPI() {
         </div>
 
         <div className="space-y-2">
-          <LabelWithAsterisk htmlFor="message" required>{t('components.contactForm.message')}</LabelWithAsterisk>
+          <LabelWithAsterisk htmlFor="message" required>
+            {t("components.contactForm.message")}
+          </LabelWithAsterisk>
           <Textarea
             id="message"
             value={form.message}
             onChange={onChange("message")}
-            placeholder={t('components.contactForm.messagePlaceholder')}
+            placeholder={t("components.contactForm.messagePlaceholder")}
             rows={4}
             className={!form.message.trim() && form.message !== initial.message ? "border-destructive" : ""}
             required
@@ -323,30 +325,24 @@ export default function ContactFormAPI() {
         {/* Privacy Consent Section */}
         <div className="space-y-4 pt-4 border-t border-border">
           <div className="text-sm text-muted-foreground leading-relaxed">
-            <p className="mb-3">
-              {t('components.contactForm.privacy.text')}
-            </p>
+            <p className="mb-3">{t("components.contactForm.privacy.text")}</p>
           </div>
 
           <div className="flex items-start space-x-3">
             <Checkbox
               id="privacy_consent"
               checked={form.privacy_consent}
-              onCheckedChange={(checked) =>
-                setForm(prev => ({ ...prev, privacy_consent: checked === true }))
-              }
+              onCheckedChange={(checked) => setForm((prev) => ({ ...prev, privacy_consent: checked === true }))}
               className="mt-1"
             />
             <div className="flex-1">
               <LabelWithAsterisk htmlFor="privacy_consent" required className="text-sm font-normal cursor-pointer">
-                {t('components.contactForm.privacy.checkbox')}
+                {t("components.contactForm.privacy.checkbox")}
               </LabelWithAsterisk>
             </div>
           </div>
 
-          <p className="text-sm text-muted-foreground">
-            {t('components.contactForm.privacy.disclaimer')}
-          </p>
+          <p className="text-sm text-muted-foreground">{t("components.contactForm.privacy.disclaimer")}</p>
         </div>
 
         {/* reCAPTCHA v2 */}
@@ -357,30 +353,23 @@ export default function ContactFormAPI() {
           disabled={!isFormValid || loading}
           className="w-full bg-orange-500 hover:bg-orange-600 text-white"
         >
-          {loading ? t('components.contactForm.submitting') : t('components.contactForm.submit')}
+          {loading ? t("components.contactForm.submitting") : t("components.contactForm.submit")}
         </Button>
 
-        {err && (
-          <div className="mt-4 p-3 bg-red-50 border border-red-200 rounded-md text-red-600 text-sm">
-            {err}
-          </div>
-        )}
+        {err && <div className="mt-4 p-3 bg-red-50 border border-red-200 rounded-md text-red-600 text-sm">{err}</div>}
       </form>
 
       {/* Security badges */}
       <div className="mt-6 flex justify-center items-center space-x-4 text-xs text-gray-500">
         <div className="flex items-center">
           <span className="mr-1">🔒</span>
-          {t('components.contactForm.badges.ssl')}
+          {t("components.contactForm.badges.ssl")}
         </div>
         <div className="flex items-center">
           <span className="mr-1">✓</span>
-          {t('components.contactForm.badges.ccpa')}
+          {t("components.contactForm.badges.ccpa")}
         </div>
       </div>
     </div>
   );
 }
-
-
-

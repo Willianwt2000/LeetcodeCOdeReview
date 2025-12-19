@@ -2,8 +2,10 @@ import React from "react";
 import cafeImg from "@/assets/case-studies/cafe-owner.jpg";
 import contractorsImg from "@/assets/case-studies/gym-owner.jpg";
 import retailImg from "@/assets/case-studies/boutique-store.jpg";
+import { useTranslation } from "react-i18next";
 
 export const CaseStudies: React.FC = () => {
+  const { t } = useTranslation();
   const studies = [
     {
       title: "Boosted revenue by 42% in 3 months",
@@ -33,7 +35,7 @@ export const CaseStudies: React.FC = () => {
   ];
   return (
     <section className="container py-16">
-      <h2 className="text-2xl sm:text-[32px] sm:leading-[40px] font-semibold mb-6">Real Results, Real Businesses</h2>
+      <h2 className="text-2xl sm:text-[32px] sm:leading-[40px] font-semibold mb-6">{t("caseStudies.pageTitle")}</h2>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {studies.map((s) => (
           <article key={s.title} className="rounded-card border overflow-hidden shadow-card">
@@ -42,11 +44,15 @@ export const CaseStudies: React.FC = () => {
               <h3 className="font-semibold sm:text-[24px] sm:leading-[32px] mb-1">{s.title}</h3>
               <ul className="mb-3 flex flex-wrap gap-2 text-xs">
                 {s.stats?.map((st) => (
-                  <li key={st} className="rounded-full bg-muted px-2 py-1">{st}</li>
+                  <li key={st} className="rounded-full bg-muted px-2 py-1">
+                    {st}
+                  </li>
                 ))}
               </ul>
               <p className="text-sm text-muted-foreground mb-3">“{s.quote}”</p>
-              <p className="text-xs text-muted-foreground">— {s.name}, {s.role}</p>
+              <p className="text-xs text-muted-foreground">
+                — {s.name}, {s.role}
+              </p>
             </div>
           </article>
         ))}

@@ -3,7 +3,6 @@ import { HUBSPOT_PORTAL_ID, MCA_FORM_ID } from "@/lib/mcaForm";
 import { attachHSListener } from "@/lib/hs/hsPostMessageBridge";
 import { ensureHubSpotForms } from "@/lib/hs/ensureHubSpotForms";
 
-
 type Props = {
   className?: string;
   portalId?: string;
@@ -25,14 +24,14 @@ export const HubSpotPrequalForm: React.FC<Props> = ({
   onReady,
 }) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const idRef = React.useRef('hsf-' + Math.random().toString(36).slice(2));
+  const idRef = React.useRef("hsf-" + Math.random().toString(36).slice(2));
   const mountedRef = useRef(false);
 
   useEffect(() => {
-    console.log('[EF TRACK] HubSpotPrequalForm start useEffect');
-    
+    console.log("[EF TRACK] HubSpotPrequalForm start useEffect");
+
     let detach: (() => void) | null = null;
-    
+
     if (!window.__HS_FORM_MOUNTED__) window.__HS_FORM_MOUNTED__ = {};
     const container = containerRef.current;
     if (!container || mountedRef.current) return;
@@ -40,35 +39,31 @@ export const HubSpotPrequalForm: React.FC<Props> = ({
     const guardKey = `${portalId}:${formId}:${idRef.current}`;
     if (window.__HS_FORM_MOUNTED__[guardKey]) return; // StrictMode/dup guard
 
-    console.log('[EF TRACK] HubSpotPrequalForm end useEffect');
+    console.log("[EF TRACK] HubSpotPrequalForm end useEffect");
 
     function isVisible(el: HTMLElement) {
       const style = window.getComputedStyle(el);
       const rect = el.getBoundingClientRect();
-      return (
-        style.display !== "none" &&
-        rect.width > 0 &&
-        rect.height >= 0
-      );
+      return style.display !== "none" && rect.width > 0 && rect.height >= 0;
     }
 
     async function createForm() {
       console.log("createForm on HubSpotPrequalForm.tsx");
       const currentContainer = containerRef.current;
       if (!window.hbspt?.forms?.create || !currentContainer || mountedRef.current) return;
-      
+
       if (!isVisible(currentContainer)) {
         // wait for layout (e.g., absolute float on desktop)
         requestAnimationFrame(createForm);
         return;
       }
-      
+
       window.__HS_FORM_MOUNTED__[guardKey] = true;
       mountedRef.current = true;
 
-      console.log('[EF TRACK] HubSpotPrequalForm waiting for ensureHubSpotForms...');
+      console.log("[EF TRACK] HubSpotPrequalForm waiting for ensureHubSpotForms...");
       await ensureHubSpotForms();
-      console.log('[EF TRACK] HubSpotPrequalForm ensured HubSpot forms loaded');
+      console.log("[EF TRACK] HubSpotPrequalForm ensured HubSpot forms loaded");
 
       window.hbspt.forms.create({
         portalId,
@@ -83,7 +78,7 @@ export const HubSpotPrequalForm: React.FC<Props> = ({
         if (eventName === "onFormReady") onReady?.();
         if (eventName === "onFormSubmitted") {
           (window as any).dataLayer = (window as any).dataLayer || [];
-          (window as any).dataLayer.push({ event: 'hs_prequal_form_submitted', formId });
+          (window as any).dataLayer.push({ event: "hs_prequal_form_submitted", formId });
         }
       });
     }
@@ -113,6 +108,6 @@ export const HubSpotPrequalForm: React.FC<Props> = ({
     };
   }, [portalId, formId, onReady]);
 
-  const containerId = 'hs-form-' + idRef.current;
+  const containerId = "hs-form-" + idRef.current;
   return <div ref={containerRef} id={containerId} className={className} />;
 };

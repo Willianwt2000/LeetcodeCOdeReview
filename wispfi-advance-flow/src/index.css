@@ -7,7 +7,7 @@ All colors MUST be HSL.
 */
 
 @layer base {
-:root {
+  :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
 
@@ -40,18 +40,18 @@ All colors MUST be HSL.
     --cta-foreground: 0 0% 100%;
 
     /* Brand button color for high-contrast link in hero */
-    --brand-blue: 212 100% 29%;            /* #084594 - WCAG AA compliant */
-    --brand-blue-hover: 212 100% 25%;      /* #073A7A - darker for hover */
-    --brand-blue-foreground: 0 0% 100%;    /* #FFFFFF */
+    --brand-blue: 212 100% 29%; /* #084594 - WCAG AA compliant */
+    --brand-blue-hover: 212 100% 25%; /* #073A7A - darker for hover */
+    --brand-blue-foreground: 0 0% 100%; /* #FFFFFF */
 
     /* Accessibility-focused tokens */
-    --ink-900: 219 69% 14%;              /* #0B1B3B for headings */
-    --body: 215 28% 35%;                 /* #334155 for body/subheads */
-    --link: 212 90% 46%;                 /* #0B5FD8 for links */
-    --cta-hover: 24 100% 46%;            /* #E85E00 hover */
-    --cta-ring: 24 100% 86%;             /* #FFD6B8 focus ring */
-    --hero-ink: 224 66% 8%;              /* #070E22 for hero overlay */
-    --outline-hover: 228 60% 96%;        /* #EEF2FF outline hover bg */
+    --ink-900: 219 69% 14%; /* #0B1B3B for headings */
+    --body: 215 28% 35%; /* #334155 for body/subheads */
+    --link: 212 90% 46%; /* #0B5FD8 for links */
+    --cta-hover: 24 100% 46%; /* #E85E00 hover */
+    --cta-ring: 24 100% 86%; /* #FFD6B8 focus ring */
+    --hero-ink: 224 66% 8%; /* #070E22 for hero overlay */
+    --outline-hover: 228 60% 96%; /* #EEF2FF outline hover bg */
 
     --radius: 0.5rem;
 
@@ -107,46 +107,98 @@ All colors MUST be HSL.
 }
 
 @layer base {
-  * { @apply border-border; }
+  * {
+    @apply border-border;
+  }
 
-  html, body, #root { @apply bg-background text-foreground font-body overflow-x-hidden; }
-  
+  html,
+  body,
+  #root {
+    @apply bg-background text-foreground font-body overflow-x-hidden;
+  }
+
   /* Enhanced mobile container consistency */
-  .container { @apply mx-auto px-4;  }
-  @media (min-width: 640px) { 
-    .container { @apply px-6;  }
+  .container {
+    @apply mx-auto px-4;
   }
-  @media (min-width: 1024px) { 
-    .container { @apply px-8;  }
+  @media (min-width: 640px) {
+    .container {
+      @apply px-6;
+    }
   }
-  
+  @media (min-width: 1024px) {
+    .container {
+      @apply px-8;
+    }
+  }
+
   /* Mobile-first responsive improvements */
   @media (max-width: 767px) {
-    .mobile-friendly { @apply px-4 py-2; }
-    .mobile-text-lg { @apply text-base; }
-    .mobile-text-xl { @apply text-lg; }
-    .mobile-text-2xl { @apply text-xl; }
-    .mobile-text-3xl { @apply text-2xl; }
-    .mobile-leading-tight { @apply leading-tight; }
-    .mobile-spacing { @apply space-y-4; }
-    .mobile-gap-4 { @apply gap-4; }
-    .mobile-p-4 { @apply p-4; }
-    .mobile-px-4 { @apply px-4; }
-    .mobile-py-6 { @apply py-6; }
-    .mobile-min-h-touch { @apply min-h-[44px]; }
+    .mobile-friendly {
+      @apply px-4 py-2;
+    }
+    .mobile-text-lg {
+      @apply text-base;
+    }
+    .mobile-text-xl {
+      @apply text-lg;
+    }
+    .mobile-text-2xl {
+      @apply text-xl;
+    }
+    .mobile-text-3xl {
+      @apply text-2xl;
+    }
+    .mobile-leading-tight {
+      @apply leading-tight;
+    }
+    .mobile-spacing {
+      @apply space-y-4;
+    }
+    .mobile-gap-4 {
+      @apply gap-4;
+    }
+    .mobile-p-4 {
+      @apply p-4;
+    }
+    .mobile-px-4 {
+      @apply px-4;
+    }
+    .mobile-py-6 {
+      @apply py-6;
+    }
+    .mobile-min-h-touch {
+      @apply min-h-[44px];
+    }
   }
-  
+
   /* Enhanced touch targets for mobile */
-  .touch-target { @apply min-h-[44px] min-w-[44px]; }
-  .touch-friendly { @apply p-3 min-h-[44px]; }
-  
-  h1,h2,h3,h4,h5,h6 { @apply font-heading; color: hsl(var(--ink-900)); }
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px];
+  }
+  .touch-friendly {
+    @apply p-3 min-h-[44px];
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading;
+    color: hsl(var(--ink-900));
+  }
 
   /* Global link styling */
-  a { color: hsl(var(--link)); text-underline-offset: 2px; }
-  a:hover { text-decoration: underline; }
+  a {
+    color: hsl(var(--link));
+    text-underline-offset: 2px;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
 }
-
 
 @layer components {
   /* Beautiful, token-based utilities */
@@ -154,7 +206,9 @@ All colors MUST be HSL.
     background-image: linear-gradient(135deg, hsl(var(--primary) / 0.12), hsl(var(--primary) / 0));
   }
 
-  .hero-surface { position: relative; }
+  .hero-surface {
+    position: relative;
+  }
 
   /* Stronger hero overlay for legibility */
   .hero-overlay {
@@ -171,16 +225,28 @@ All colors MUST be HSL.
     color: hsl(var(--primary-foreground));
     background-image: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary) / 0.85));
   }
-  .shadow-card { box-shadow: 0 10px 24px hsl(222 47% 5% / 0.06); }
-  .rounded-card { border-radius: 16px; }
+  .shadow-card {
+    box-shadow: 0 10px 24px hsl(222 47% 5% / 0.06);
+  }
+  .rounded-card {
+    border-radius: 16px;
+  }
 
   /* Subtle text shadow for hero text */
-  .hero-text-shadow { text-shadow: 0 1px 3px hsl(0 0% 0% / 0.6); }
+  .hero-text-shadow {
+    text-shadow: 0 1px 3px hsl(0 0% 0% / 0.6);
+  }
 
   /* Hero text colors */
-  .text-hero-pre { color: hsl(0 0% 100%); }  /* #FFFFFF */
-  .text-hero-sub { color: hsl(210 20% 96%); }  /* #F3F4F6 */
-  .text-hero-primary { color: hsl(0 0% 100%); } /* #FFFFFF */
+  .text-hero-pre {
+    color: hsl(0 0% 100%);
+  } /* #FFFFFF */
+  .text-hero-sub {
+    color: hsl(210 20% 96%);
+  } /* #F3F4F6 */
+  .text-hero-primary {
+    color: hsl(0 0% 100%);
+  } /* #FFFFFF */
 
   .glass {
     background-color: hsl(var(--background) / 0.6);
@@ -190,6 +256,12 @@ All colors MUST be HSL.
   /* Blog content styling */
   .blog-content-container {
     max-width: none;
+  }
+
+  button a,
+  [class*="brandBlue"] a,
+  [class*="brandBlue"] {
+    color: white !important;
   }
 
   .blog-content h1 {
@@ -294,7 +366,7 @@ All colors MUST be HSL.
       padding-left: 1rem;
       padding-right: 1rem;
     }
-    
+
     /* Hero section mobile improvements */
     .hero-text-shadow {
       text-shadow: 0 2px 4px hsl(0 0% 0% / 0.8);
@@ -305,78 +377,126 @@ All colors MUST be HSL.
   @media (max-width: 640px) {
     /* ---------- Visibility & layout adjustments ---------- */
     /* Hide EF industry chips only on phones */
-    .ef-hero .industry-chips { display: none !important; }
+    .ef-hero .industry-chips {
+      display: none !important;
+    }
 
     /* Reposition the promo badge on EF hero (top-right micro-pill) */
     .ef-hero .promo-badge {
-      position: absolute; right: 12px; top: 12px;
-      padding: 8px 12px; border-radius: 9999px;
-      background: rgba(255, 115, 0, 0.92); color: #fff;
-      font-weight: 600; font-size: 12.5px; line-height: 1;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+      position: absolute;
+      right: 12px;
+      top: 12px;
+      padding: 8px 12px;
+      border-radius: 9999px;
+      background: rgba(255, 115, 0, 0.92);
+      color: #fff;
+      font-weight: 600;
+      font-size: 12.5px;
+      line-height: 1;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
       backdrop-filter: saturate(120%) blur(2px);
     }
 
     /* Remove any 'deadline' overlay in hero and move it below */
-    .hero-deadline-overlay { display: none !important; }
+    .hero-deadline-overlay {
+      display: none !important;
+    }
     .hero-deadline-mobile {
-      display: block; margin: 10px auto 0; padding: 10px 14px;
-      max-width: 1120px; font-size: 14px; line-height: 1.35;
-      color: #111827; background: #F3F4F6; border-radius: 12px;
+      display: block;
+      margin: 10px auto 0;
+      padding: 10px 14px;
+      max-width: 1120px;
+      font-size: 14px;
+      line-height: 1.35;
+      color: #111827;
+      background: #f3f4f6;
+      border-radius: 12px;
     }
 
     /* ---------- Type & spacing (phones only) ---------- */
-    .hero-headline-mobile { font-size: clamp(1.28rem, 5.2vw, 1.55rem); line-height: 1.18; letter-spacing: -0.01em; text-wrap: balance; }
-    .hero-sub-mobile      { font-size: clamp(0.92rem, 3.6vw, 1.02rem); line-height: 1.35; text-wrap: pretty; }
+    .hero-headline-mobile {
+      font-size: clamp(1.28rem, 5.2vw, 1.55rem);
+      line-height: 1.18;
+      letter-spacing: -0.01em;
+      text-wrap: balance;
+    }
+    .hero-sub-mobile {
+      font-size: clamp(0.92rem, 3.6vw, 1.02rem);
+      line-height: 1.35;
+      text-wrap: pretty;
+    }
 
     /* Push copy lower so faces (eyes/forehead) stay clear */
-    .hero-copy-mobile-offset { margin-top: clamp(4.25rem, 16vw, 6.25rem); }
+    .hero-copy-mobile-offset {
+      margin-top: clamp(4.25rem, 16vw, 6.25rem);
+    }
 
     /* Smaller CTA paddings so blocks fit without crowding */
-    .btn-mobile-compact { padding: 10px 14px !important; border-radius: 14px !important; font-size: 15px !important; }
+    .btn-mobile-compact {
+      padding: 10px 14px !important;
+      border-radius: 14px !important;
+      font-size: 15px !important;
+    }
 
     /* Subtle gradient behind text for readability */
     .hero-gradient-mobile::before {
-      content: ""; position: absolute; inset: 0 0 42% 0;
-      background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.33));
+      content: "";
+      position: absolute;
+      inset: 0 0 42% 0;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.33));
       pointer-events: none;
     }
 
     /* Ensure hero images fill safely on phones */
-    .hero-img-mobile { height: 76vh; width: 100%; object-fit: cover; }
-    .hero-img-mobile.home { height: 78vh; }
+    .hero-img-mobile {
+      height: 76vh;
+      width: 100%;
+      object-fit: cover;
+    }
+    .hero-img-mobile.home {
+      height: 78vh;
+    }
 
     /* Create safe zone for text (avoid top 35% of image) */
-    .hero-safe-zone { padding-top: min(38vh, 38%); } /* shifts content lower */
+    .hero-safe-zone {
+      padding-top: min(38vh, 38%);
+    } /* shifts content lower */
 
-    .face-safe-center { object-position: 50% 25% !important; }
-    .face-safe-right  { object-position: 80% 30% !important; }
+    .face-safe-center {
+      object-position: 50% 25% !important;
+    }
+    .face-safe-right {
+      object-position: 80% 30% !important;
+    }
 
-    .bg-face-safe-center { background-position: 50% 25% !important; }
-    .bg-face-safe-right  { background-position: 80% 30% !important; }
+    .bg-face-safe-center {
+      background-position: 50% 25% !important;
+    }
+    .bg-face-safe-right {
+      background-position: 80% 30% !important;
+    }
   }
 
   @media (max-width: 767px) {
-    
     /* Form mobile optimizations */
     .hs-form-frame .hs-form input.hs-input,
     .hs-form-frame .hs-form select,
     .hs-form-frame .hs-form textarea {
       font-size: 16px !important; /* Prevents iOS zoom */
     }
-    
+
     /* Button mobile improvements */
     .btn-wcag,
     button[class*="cta"] {
       min-height: 44px;
       font-size: 14px;
     }
-    
+
     /* Mobile spacing fixes */
     .space-y-3 > * + * {
       margin-top: 0.75rem;
     }
-    
+
     .space-y-4 > * + * {
       margin-top: 1rem;
     }
@@ -384,13 +504,15 @@ All colors MUST be HSL.
 
   /* Grid background patterns */
   .bg-grid-white\/10 {
-    background-image: linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
-                      linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
   }
 
   .bg-grid-white\/5 {
-    background-image: linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
-                      linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
   }
 
   /* Custom border utilities */
@@ -407,7 +529,7 @@ All colors MUST be HSL.
   .bg-brand-blue-700 {
     background-color: hsl(var(--brand-blue));
   }
-  
+
   .hover\:bg-brand-blue-800:hover {
     background-color: hsl(var(--brand-blue-hover));
   }
@@ -417,7 +539,7 @@ All colors MUST be HSL.
     min-height: 48px;
     font-weight: 700;
     letter-spacing: 0.2px;
-    color: #FFFFFF;
+    color: #ffffff;
     background-color: hsl(var(--brand-blue));
   }
 
@@ -457,19 +579,25 @@ All colors MUST be HSL.
 
   .hover-lift:hover {
     transform: translateY(-1px);
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    box-shadow:
+      0 10px 25px -5px rgba(0, 0, 0, 0.1),
+      0 10px 10px -5px rgba(0, 0, 0, 0.04);
   }
 
   /* Consistent card styling */
   .card-consistent {
     border-radius: 12px;
     border: 1px solid hsl(var(--border));
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    box-shadow:
+      0 1px 3px 0 rgba(0, 0, 0, 0.1),
+      0 1px 2px 0 rgba(0, 0, 0, 0.06);
     transition: all 0.2s ease-in-out;
   }
 
   .card-consistent:hover {
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-shadow:
+      0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06);
   }
 
   /* Professional spacing system */
@@ -531,7 +659,7 @@ All colors MUST be HSL.
   .mca-theme .hs-form select,
   .mca-theme .hs-form textarea {
     border-radius: 8px !important;
-    border: 1px solid rgba(15,23,42,0.12) !important; /* slate-200-ish */
+    border: 1px solid rgba(15, 23, 42, 0.12) !important; /* slate-200-ish */
     height: 40px !important;
   }
 
@@ -555,7 +683,9 @@ All colors MUST be HSL.
     background: transparent !important;
     border: 0 !important;
   }
-  .hs-form-frame .hs-form .hs-form-field { margin-bottom: 8px !important; }
+  .hs-form-frame .hs-form .hs-form-field {
+    margin-bottom: 8px !important;
+  }
 
   /* Inputs / selects / textareas - compact height with warm styling */
   .hs-form-frame .hs-input,
@@ -573,7 +703,10 @@ All colors MUST be HSL.
     transition: all 0.2s ease;
     backdrop-filter: blur(8px);
   }
-  .hs-form-frame textarea { min-height: 70px; height: auto; }
+  .hs-form-frame textarea {
+    min-height: 70px;
+    height: auto;
+  }
 
   /* Focus states */
   .hs-form-frame .hs-input:focus,
@@ -609,212 +742,212 @@ All colors MUST be HSL.
     margin-top: 2px;
   }
 
-/* HubSpot Contact Form Styling - container styling removed to avoid duplication */
+  /* HubSpot Contact Form Styling - container styling removed to avoid duplication */
 
-.hs-form-frame .hs-form { 
-  max-width: 100% !important; 
-  margin: 0 !important; 
-  padding: 0 !important; 
-  font-family: inherit !important;
-}
+  .hs-form-frame .hs-form {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-family: inherit !important;
+  }
 
-.hs-form-frame .hs-form fieldset { 
-  margin: 0 !important; 
-  padding: 0 !important; 
-  border: none !important;
-}
+  .hs-form-frame .hs-form fieldset {
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+  }
 
-.hs-form-frame .hs-form .hs-form-field { 
-  margin-bottom: 24px !important; 
-  margin-top: 0 !important;
-}
+  .hs-form-frame .hs-form .hs-form-field {
+    margin-bottom: 24px !important;
+    margin-top: 0 !important;
+  }
 
-.hs-form-frame .hs-form .hs-form-field:last-child { 
-  margin-bottom: 0 !important; 
-}
+  .hs-form-frame .hs-form .hs-form-field:last-child {
+    margin-bottom: 0 !important;
+  }
 
-/* Two-column layout for name and phone - EXACT match */
-.hs-form-frame fieldset.form-columns-2 { 
-  display: grid !important; 
-  grid-template-columns: 1fr 1fr !important; 
-  gap: 16px !important; 
-  margin: 0 0 24px 0 !important; 
-  padding: 0 !important; 
-}
+  /* Two-column layout for name and phone - EXACT match */
+  .hs-form-frame fieldset.form-columns-2 {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 16px !important;
+    margin: 0 0 24px 0 !important;
+    padding: 0 !important;
+  }
 
-@media (max-width: 767.98px) { 
-  .hs-form-frame fieldset.form-columns-2 { 
-    grid-template-columns: 1fr !important; 
-    gap: 24px !important;
-  } 
-}
+  @media (max-width: 767.98px) {
+    .hs-form-frame fieldset.form-columns-2 {
+      grid-template-columns: 1fr !important;
+      gap: 24px !important;
+    }
+  }
 
-/* Labels - EXACT match */
-.hs-form-frame .hs-form label { 
-  font-weight: 500 !important; 
-  font-size: 14px !important; 
-  color: hsl(222.2 84% 4.9%) !important; 
-  margin-bottom: 8px !important; 
-  display: block !important;
-  line-height: 1.4 !important;
-}
+  /* Labels - EXACT match */
+  .hs-form-frame .hs-form label {
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    color: hsl(222.2 84% 4.9%) !important;
+    margin-bottom: 8px !important;
+    display: block !important;
+    line-height: 1.4 !important;
+  }
 
-/* Input fields - EXACT match to current form */
-.hs-form-frame .hs-form input.hs-input, 
-.hs-form-frame .hs-form select, 
-.hs-form-frame .hs-form textarea {
-  height: 44px !important; 
-  padding: 12px 14px !important; 
-  border-radius: 6px !important;
-  border: 1px solid hsl(214.3 31.8% 91.4%) !important; 
-  background: #FFFFFF !important; 
-  font-size: 16px !important;
-  line-height: 1.4 !important; 
-  width: 100% !important; 
-  box-sizing: border-box !important;
-  transition: all 0.2s ease !important; 
-  margin: 0 !important;
-  font-family: inherit !important;
-  color: hsl(222.2 84% 4.9%) !important;
-}
+  /* Input fields - EXACT match to current form */
+  .hs-form-frame .hs-form input.hs-input,
+  .hs-form-frame .hs-form select,
+  .hs-form-frame .hs-form textarea {
+    height: 44px !important;
+    padding: 12px 14px !important;
+    border-radius: 6px !important;
+    border: 1px solid hsl(214.3 31.8% 91.4%) !important;
+    background: #ffffff !important;
+    font-size: 16px !important;
+    line-height: 1.4 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    transition: all 0.2s ease !important;
+    margin: 0 !important;
+    font-family: inherit !important;
+    color: hsl(222.2 84% 4.9%) !important;
+  }
 
-.hs-form-frame .hs-form textarea { 
-  min-height: 120px !important; 
-  height: auto !important; 
-  resize: vertical !important;
-}
+  .hs-form-frame .hs-form textarea {
+    min-height: 120px !important;
+    height: auto !important;
+    resize: vertical !important;
+  }
 
-/* Focus states - EXACT match */
-.hs-form-frame .hs-form input.hs-input:focus, 
-.hs-form-frame .hs-form select:focus, 
-.hs-form-frame .hs-form textarea:focus {
-  outline: none !important; 
-  border-color: #f97316 !important; 
-  box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.1) !important;
-}
+  /* Focus states - EXACT match */
+  .hs-form-frame .hs-form input.hs-input:focus,
+  .hs-form-frame .hs-form select:focus,
+  .hs-form-frame .hs-form textarea:focus {
+    outline: none !important;
+    border-color: #f97316 !important;
+    box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.1) !important;
+  }
 
-/* Placeholder styling */
-.hs-form-frame .hs-form input.hs-input::placeholder,
-.hs-form-frame .hs-form textarea::placeholder {
-  color: hsl(215.4 16.3% 46.9%) !important;
-  font-style: italic !important;
-}
+  /* Placeholder styling */
+  .hs-form-frame .hs-form input.hs-input::placeholder,
+  .hs-form-frame .hs-form textarea::placeholder {
+    color: hsl(215.4 16.3% 46.9%) !important;
+    font-style: italic !important;
+  }
 
-/* Select styling */
-.hs-form-frame .hs-form select {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e") !important;
-  background-position: right 12px center !important;
-  background-repeat: no-repeat !important;
-  background-size: 16px !important;
-  padding-right: 40px !important;
-  appearance: none !important;
-}
+  /* Select styling */
+  .hs-form-frame .hs-form select {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e") !important;
+    background-position: right 12px center !important;
+    background-repeat: no-repeat !important;
+    background-size: 16px !important;
+    padding-right: 40px !important;
+    appearance: none !important;
+  }
 
-/* Error messages */
-.hs-form-frame .hs-error-msg, 
-.hs-form-frame .hs-error-msgs { 
-  color: hsl(0 84.2% 60.2%) !important; 
-  font-size: 12px !important; 
-  margin-top: 4px !important; 
-}
+  /* Error messages */
+  .hs-form-frame .hs-error-msg,
+  .hs-form-frame .hs-error-msgs {
+    color: hsl(0 84.2% 60.2%) !important;
+    font-size: 12px !important;
+    margin-top: 4px !important;
+  }
 
-/* Consent checkbox styling - EXACT match */
-.hs-form-frame .hs-form .legal-consent-container,
-.hs-form-frame .hs-form .legal-consent-container p { 
-  font-size: 14px !important; 
-  line-height: 1.5 !important; 
-  color: hsl(222.2 84% 4.9%) !important; 
-  margin: 0 !important; 
-}
+  /* Consent checkbox styling - EXACT match */
+  .hs-form-frame .hs-form .legal-consent-container,
+  .hs-form-frame .hs-form .legal-consent-container p {
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+    color: hsl(222.2 84% 4.9%) !important;
+    margin: 0 !important;
+  }
 
-.hs-form-frame .hs-form .legal-consent-container {
-  margin-top: 16px !important;
-  margin-bottom: 16px !important;
-}
+  .hs-form-frame .hs-form .legal-consent-container {
+    margin-top: 16px !important;
+    margin-bottom: 16px !important;
+  }
 
-.hs-form-frame .hs-form input[type="checkbox"] {
-  width: 16px !important;
-  height: 16px !important;
-  margin-right: 8px !important;
-  margin-top: 4px !important;
-  flex-shrink: 0 !important;
-}
+  .hs-form-frame .hs-form input[type="checkbox"] {
+    width: 16px !important;
+    height: 16px !important;
+    margin-right: 8px !important;
+    margin-top: 4px !important;
+    flex-shrink: 0 !important;
+  }
 
-.hs-form-frame .hs-form .legal-consent-container label {
-  display: flex !important;
-  align-items: flex-start !important;
-  gap: 8px !important;
-  font-weight: 400 !important;
-  font-size: 14px !important;
-}
+  .hs-form-frame .hs-form .legal-consent-container label {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+    font-weight: 400 !important;
+    font-size: 14px !important;
+  }
 
-/* Submit button - EXACT match to current form */
-.hs-form-frame .hs-submit { 
-  margin-top: 16px !important; 
-  margin-bottom: 0 !important; 
-}
+  /* Submit button - EXACT match to current form */
+  .hs-form-frame .hs-submit {
+    margin-top: 16px !important;
+    margin-bottom: 0 !important;
+  }
 
-.hs-form-frame .hs-submit input[type="submit"] {
-  width: 100% !important; 
-  height: 52px !important; 
-  border-radius: 6px !important;
-  background: hsl(214.3 100% 33.9%) !important;
-  color: hsl(210 40% 98%) !important; 
-  font-weight: 600 !important; 
-  font-size: 16px !important;
-  border: none !important; 
-  cursor: pointer !important; 
-  transition: all 0.2s ease !important; 
-  margin: 0 !important;
-  font-family: inherit !important;
-  letter-spacing: 0.025em !important;
-}
+  .hs-form-frame .hs-submit input[type="submit"] {
+    width: 100% !important;
+    height: 52px !important;
+    border-radius: 6px !important;
+    background: hsl(214.3 100% 33.9%) !important;
+    color: hsl(210 40% 98%) !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    border: none !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    margin: 0 !important;
+    font-family: inherit !important;
+    letter-spacing: 0.025em !important;
+  }
 
-.hs-form-frame .hs-submit input[type="submit"]:hover { 
-  background: hsl(214.3 100% 30%) !important;
-  transform: translateY(-1px) !important;
-  box-shadow: 0 4px 12px rgba(0, 61, 165, 0.3) !important;
-}
+  .hs-form-frame .hs-submit input[type="submit"]:hover {
+    background: hsl(214.3 100% 30%) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 12px rgba(0, 61, 165, 0.3) !important;
+  }
 
-.hs-form-frame .hs-submit input[type="submit"]:active { 
-  transform: translateY(0px) !important; 
-}
+  .hs-form-frame .hs-submit input[type="submit"]:active {
+    transform: translateY(0px) !important;
+  }
 
-/* Hide any extra elements that might appear */
-.hs-form-frame .hs-form [class*="badge"], 
-.hs-form-frame .hs-form [class*="pill"], 
-.hs-form-frame .hs-form .security-icons, 
-.hs-form-frame .hs-form [class*="icons-row"] {
-  display: none !important;
-}
+  /* Hide any extra elements that might appear */
+  .hs-form-frame .hs-form [class*="badge"],
+  .hs-form-frame .hs-form [class*="pill"],
+  .hs-form-frame .hs-form .security-icons,
+  .hs-form-frame .hs-form [class*="icons-row"] {
+    display: none !important;
+  }
 
-/* Remove any default margins/padding */
-.hs-form-frame .hs_error_rollup { 
-  margin: 0 !important; 
-}
+  /* Remove any default margins/padding */
+  .hs-form-frame .hs_error_rollup {
+    margin: 0 !important;
+  }
 
-.hs-form-frame .hs-form > * { 
-  margin-top: 0 !important; 
-}
+  .hs-form-frame .hs-form > * {
+    margin-top: 0 !important;
+  }
 
-.hs-form-frame .hs-form > *:first-child { 
-  margin-top: 0 !important; 
-}
+  .hs-form-frame .hs-form > *:first-child {
+    margin-top: 0 !important;
+  }
 
-.hs-form-frame .hs-form > *:last-child { 
-  margin-bottom: 0 !important; 
-}
+  .hs-form-frame .hs-form > *:last-child {
+    margin-bottom: 0 !important;
+  }
 
-/* Ensure proper spacing between form sections */
-.hs-form-frame .hs-form .hs-richtext {
-  margin: 0 !important;
-  padding: 0 !important;
-}
+  /* Ensure proper spacing between form sections */
+  .hs-form-frame .hs-form .hs-richtext {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
 
-.hs-form-frame .hs-form .actions {
-  margin-top: 16px !important;
-  margin-bottom: 0 !important;
-}
+  .hs-form-frame .hs-form .actions {
+    margin-top: 16px !important;
+    margin-bottom: 0 !important;
+  }
 }
 
 /* Hide any accidental loaders around HubSpot form (non-layout affecting) */

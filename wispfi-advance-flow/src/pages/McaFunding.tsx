@@ -48,10 +48,10 @@ const McaFunding = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Helmet>
-        <title>{t('meta.mcaFunding.title')}</title>
+        <title>Merchant Cash Advance (MCA) — Business Funding in as little as 24–48 Hours | WispFi</title>
         <meta
           name="description"
-          content={t('meta.mcaFunding.description')}
+          content="Get fast working capital in as little as 24–48 hours. MCA funding to cover payroll, inventory, and seasonal cash flow. Subject to approval."
         />
         <meta
           name="keywords"
@@ -63,11 +63,11 @@ const McaFunding = () => {
         {/* OpenGraph Tags */}
         <meta
           property="og:title"
-          content={t('meta.mcaFunding.title')}
+          content="Merchant Cash Advance (MCA) — Business Funding in as little as 24–48 Hours | WispFi"
         />
         <meta
           property="og:description"
-          content={t('meta.mcaFunding.description')}
+          content="Get fast working capital in as little as 24–48 hours. MCA funding to cover payroll, inventory, and seasonal cash flow. Subject to approval."
         />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/og/wispfi-default.jpg" />

@@ -41,7 +41,7 @@ function loadRecaptchaV2(): Promise<void> {
   return loadPromise;
 }
 
-export function RecaptchaV2({ onChange, className }: { onChange: (token: string) => void; className?: string; }) {
+export function RecaptchaV2({ onChange, className }: { onChange: (token: string) => void; className?: string }) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const widgetIdRef = useRef<number | null>(null);
 
@@ -58,7 +58,7 @@ export function RecaptchaV2({ onChange, className }: { onChange: (token: string)
             sitekey: ENV.RECAPTCHA_SITE_KEY,
             callback: (token: string) => onChange(token || ""),
             "expired-callback": () => onChange(""),
-            "error-callback": () => onChange("")
+            "error-callback": () => onChange(""),
           });
         };
         if (window.grecaptcha && window.grecaptcha.render) {
@@ -74,7 +74,9 @@ export function RecaptchaV2({ onChange, className }: { onChange: (token: string)
       }
     };
     init();
-    return () => { cancelled = true; };
+    return () => {
+      cancelled = true;
+    };
   }, [onChange]);
 
   return (

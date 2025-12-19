@@ -15,35 +15,32 @@ export const EquipmentBlogPreview = () => {
     <section className="py-16 bg-muted">
       <div className="container">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">{t('components.equipmentBlogPreview.title')}</h2>
+          <h2 className="text-3xl font-bold mb-4">{t("components.equipmentBlogPreview.title")}</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            {t('components.equipmentBlogPreview.subtitle')}
+            {t("components.equipmentBlogPreview.subtitle")}
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          {latestPosts.map(post => (
+          {latestPosts.map((post) => (
             <Card key={post.id} className="h-full flex flex-col hover:shadow-lg transition-shadow">
               <div className="aspect-video overflow-hidden rounded-t-lg">
-                      <img
-                        src={post.image}
-                        alt={post.alt}
+                <img
+                  src={post.image}
+                  alt={post.alt}
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <CardHeader className="flex-1">
-                <Badge variant="secondary" className="w-fit mb-2">{post.category}</Badge>
+                <Badge variant="secondary" className="w-fit mb-2">
+                  {post.category}
+                </Badge>
                 <h3 className="text-lg font-semibold line-clamp-2 mb-2">
-                  <Link 
-                    to={`/blog/${post.slug}`}
-                    className="hover:text-primary transition-colors"
-                  >
+                  <Link to={`/blog/${post.slug}`} className="hover:text-primary transition-colors">
                     {post.title}
                   </Link>
                 </h3>
-                <p className="text-muted-foreground line-clamp-2 text-sm">
-                  {post.excerpt}
-                </p>
+                <p className="text-muted-foreground line-clamp-2 text-sm">{post.excerpt}</p>
               </CardHeader>
               <CardContent className="pt-0">
                 <div className="flex items-center justify-between text-xs text-muted-foreground mb-3">
@@ -56,23 +53,23 @@ export const EquipmentBlogPreview = () => {
                     {post.readTime}
                   </div>
                 </div>
-                <TrackedButton 
-                  size="sm" 
+                <TrackedButton
+                  size="sm"
                   href={`/blog/${post.slug}`}
                   className="w-full"
                   trackingData={{
-                    action: 'ef_blog_preview_read',
-                    category: 'content',
+                    action: "ef_blog_preview_read",
+                    category: "content",
                     label: post.slug,
-                    source: 'equipment_financing_blog_preview'
+                    source: "equipment_financing_blog_preview",
                   }}
                   utmParams={{
-                    source: 'equipment_financing',
-                    medium: 'blog_preview',
-                    campaign: 'ef_blog_engagement'
+                    source: "equipment_financing",
+                    medium: "blog_preview",
+                    campaign: "ef_blog_engagement",
                   }}
                 >
-                  {t('components.equipmentBlogPreview.readMore')}
+                  {t("components.equipmentBlogPreview.readMore")}
                 </TrackedButton>
               </CardContent>
             </Card>
@@ -80,22 +77,22 @@ export const EquipmentBlogPreview = () => {
         </div>
 
         <div className="text-center">
-          <TrackedButton 
-            variant="outline" 
+          <TrackedButton
+            variant="brandBlue"
             href="/blog"
             trackingData={{
-              action: 'ef_view_all_blog',
-              category: 'navigation',
-              label: 'equipment_financing_blog_preview',
-              source: 'equipment_financing_blog_preview'
+              action: "ef_view_all_blog",
+              category: "navigation",
+              label: "equipment_financing_blog_preview",
+              source: "equipment_financing_blog_preview",
             }}
             utmParams={{
-              source: 'equipment_financing',
-              medium: 'blog_preview_cta',
-              campaign: 'ef_blog_navigation'
+              source: "equipment_financing",
+              medium: "blog_preview_cta",
+              campaign: "ef_blog_navigation",
             }}
           >
-            {t('components.equipmentBlogPreview.viewAll')}
+            {t("components.equipmentBlogPreview.viewAll")}
           </TrackedButton>
         </div>
       </div>

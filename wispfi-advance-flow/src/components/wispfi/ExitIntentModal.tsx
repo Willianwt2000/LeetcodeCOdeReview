@@ -24,7 +24,9 @@ export const ExitIntentModal = () => {
       if (window.innerWidth < 640) return; // avoid on small screens
       if (e.clientY <= 0) {
         setOpen(true);
-        try { sessionStorage.setItem(STORAGE_KEY, "1"); } catch {}
+        try {
+          sessionStorage.setItem(STORAGE_KEY, "1");
+        } catch {}
         window.removeEventListener("mouseout", onLeave);
       }
     };
@@ -37,9 +39,9 @@ export const ExitIntentModal = () => {
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogContent className="sm:max-w-xl w-[92vw] max-w-[700px] p-4 sm:p-6 rounded-2xl overflow-y-auto max-h-[85vh]">
         <DialogHeader>
-          <DialogTitle>{t('components.exitIntentModal.title')}</DialogTitle>
+          <DialogTitle>{t("components.exitIntentModal.title")}</DialogTitle>
         </DialogHeader>
-        <p className="text-sm text-muted-foreground -mt-2 mb-4">{t('components.exitIntentModal.subtitle')}</p>
+        <p className="text-sm text-muted-foreground -mt-2 mb-4">{t("components.exitIntentModal.subtitle")}</p>
         <MCAFormAPI />
       </DialogContent>
     </Dialog>

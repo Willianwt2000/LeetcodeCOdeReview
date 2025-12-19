@@ -20,15 +20,19 @@ export const FundingCalculator: React.FC<FundingCalculatorProps> = ({ onOpenModa
     <section className="container py-16">
       <div className="grid gap-8 lg:grid-cols-2 items-stretch">
         <div className="rounded-lg border bg-card p-6 shadow-sm">
-          <h2 className="text-2xl font-semibold mb-2">{t('components.fundingCalculator.title')}</h2>
-          <p className="text-sm text-muted-foreground mb-6">{t('components.fundingCalculator.subtitle')}</p>
+          <h2 className="text-2xl font-semibold mb-2">{t("components.fundingCalculator.title")}</h2>
+          <p className="text-sm text-muted-foreground mb-6">{t("components.fundingCalculator.subtitle")}</p>
 
           <div className="grid gap-6">
             <div>
-              <label className="block text-sm font-medium mb-2">{t('components.fundingCalculator.monthlyRevenue')}</label>
+              <label className="block text-sm font-medium mb-2">
+                {t("components.fundingCalculator.monthlyRevenue")}
+              </label>
               <div className="flex items-center justify-between text-sm mb-2">
                 <span className="text-muted-foreground">$5k</span>
-                <span className="font-semibold">{revenue.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 })}</span>
+                <span className="font-semibold">
+                  {revenue.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 })}
+                </span>
                 <span className="text-muted-foreground">$2M</span>
               </div>
               <Slider
@@ -42,10 +46,14 @@ export const FundingCalculator: React.FC<FundingCalculatorProps> = ({ onOpenModa
             </div>
 
             <div>
-              <label className="block text-sm font-medium mb-2">{t('components.fundingCalculator.estimatedTerm')}</label>
+              <label className="block text-sm font-medium mb-2">
+                {t("components.fundingCalculator.estimatedTerm")}
+              </label>
               <div className="flex items-center justify-between text-sm mb-2">
                 <span className="text-muted-foreground">6</span>
-                <span className="font-semibold">{term} {t('components.fundingCalculator.months')}</span>
+                <span className="font-semibold">
+                  {term} {t("components.fundingCalculator.months")}
+                </span>
                 <span className="text-muted-foreground">18</span>
               </div>
               <Slider
@@ -59,32 +67,39 @@ export const FundingCalculator: React.FC<FundingCalculatorProps> = ({ onOpenModa
             </div>
 
             <div className="rounded-md border bg-muted/40 p-4">
-              <p className="text-sm">{t('components.fundingCalculator.estimatedRange')}</p>
+              <p className="text-sm">{t("components.fundingCalculator.estimatedRange")}</p>
               <p className="text-2xl font-semibold">
                 {estMin.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 })}
                 <span className="mx-1">–</span>
                 {estMax.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 })}
-                <span className="ml-2 text-sm font-normal text-muted-foreground">{t('components.fundingCalculator.overMonths', { months: term })}</span>
+                <span className="ml-2 text-sm font-normal text-muted-foreground">
+                  {t("components.fundingCalculator.overMonths", { months: term })}
+                </span>
               </p>
-              <p className="mt-2 text-xs text-muted-foreground">{t('components.fundingCalculator.disclaimer')}</p>
+              <p className="mt-2 text-xs text-muted-foreground">{t("components.fundingCalculator.disclaimer")}</p>
             </div>
 
             <div className="flex items-center justify-between gap-3">
-              <p className="text-xs text-muted-foreground">{t('components.fundingCalculator.noCreditImpact')}</p>
+              <p className="text-xs text-muted-foreground">{t("components.fundingCalculator.noCreditImpact")}</p>
               <Button variant="cta" onClick={onOpenModal}>
-                {t('components.fundingCalculator.applyNow')}
+                {t("components.fundingCalculator.applyNow")}
               </Button>
             </div>
           </div>
         </div>
 
         <figure className="relative rounded-lg overflow-hidden border">
-          <img src={fundingImg} alt="Café owner smiling at customer while processing a payment" className="h-full w-full object-cover object-center" loading="lazy" />
+          <img
+            src={fundingImg}
+            alt="Café owner smiling at customer while processing a payment"
+            className="h-full w-full object-cover object-center"
+            loading="lazy"
+          />
           <figcaption className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent p-6 flex items-end">
             <blockquote className="text-white max-w-md text-sm sm:text-base">
-              {t('components.fundingCalculator.testimonialQuote')}
+              {t("components.fundingCalculator.testimonialQuote")}
               <br />
-              <span className="text-white/80">— {t('components.fundingCalculator.testimonialAuthor')}</span>
+              <span className="text-white/80">— {t("components.fundingCalculator.testimonialAuthor")}</span>
             </blockquote>
           </figcaption>
         </figure>

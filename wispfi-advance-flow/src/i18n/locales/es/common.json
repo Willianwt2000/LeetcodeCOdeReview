@@ -12,6 +12,48 @@
     "menu": "Menú",
     "language": "Idioma"
   },
+  "formShell": {
+    "trust": {
+      "bbbRating": "Calificación A+ BBB",
+      "fundedCount": "15K+ Financiados",
+      "sslEncrypted": "Cifrado SSL",
+      "ccpaCompliant": "Cumple con CCPA",
+      "infoNeverShared": "🔒 Tu información nunca es compartida"
+    },
+    "mca": {
+      "pillBanner": "MÁS DE $2M EN FONDOS • TIEMPO LIMITADO",
+      "headline": "Verifica tu Elegibilidad • ",
+      "headlineAccent": "Proceso rápido • Sin impacto crediticio",
+      "subhead": "Sin verificación de crédito personal para empezar • No se requiere garantía",
+      "proofLine": "⚡ Únete a más de 15,000 negocios financiados con calificación A+ BBB",
+      "greenTileTitle": "Hasta $2M",
+      "greenTileSubtitle": "La mayoría obtiene $50K-$2M",
+      "blueTileTitle": "Decisión Rápida (Sujeto a aprobación)",
+      "blueTileSubtitle": "Fondos en tan solo 1-2 días hábiles"
+    },
+    "ef": {
+      "pillBanner": "MÁS DE $2M EN FINANCIAMIENTO DE EQUIPOS • TIEMPO LIMITADO",
+      "headline": "Solicita Financiamiento de Equipos",
+      "headlineAccent": "",
+      "subhead": "Financiamiento desde $10,000 hasta $2,000,000 • Solicitud en línea rápida • Aprobaciones en tan solo 24–48 horas",
+      "proofLine": "⚡ Únete a más de 1,000 compradores de equipos que cerraron en menos de 5 días",
+      "greenTileTitle": "Línea de Equipos de hasta $2M***",
+      "greenTileSubtitle": "La mayoría obtiene $50K–$2M",
+      "blueTileTitle": "Decisión Rápida (Sujeto a aprobación)",
+      "blueTileSubtitle": "En tan solo 1–2 días hábiles"
+    },
+    "mca-b": {
+      "headline": "",
+      "headlineAccent": "",
+      "pillBanner": "",
+      "proofLine": "",
+      "subhead": "Formulario seguro • Verifica elegibilidad rápidamente • Sin obligación",
+      "greenTileTitle": "Hasta $2M",
+      "greenTileSubtitle": "La mayoría obtiene $50K-$2M",
+      "blueTileTitle": "Decisión Rápida (Sujeto a aprobación)",
+      "blueTileSubtitle": "Fondos en tan solo 1-2 días hábiles"
+    }
+  },
   "meta": {
     "index": {
       "title": "Financiamiento MCA WispFi | Fondos disponibles en 24–48 horas*",
@@ -99,9 +141,10 @@
   },
   "hero": {
     "preHeadline": "Capital de Trabajo Rápido • Sin Garantía",
-    "headline": "Financiamiento Rápido y Flexible para Pequeñas Empresas — Tu Crecimiento Comienza Aquí.",
-    "subHeadline": "Financiamiento disponible en tan solo 24–48 horas* — sin garantía, sin estrés.",
-    "socialProof": "Más de 2,000 dueños de negocios aseguraron $5K–$5M para flujo de caja, equipos y proveedores sin esperar en filas de bancos.",
+    "headline": "Financiamiento Rápido y Flexible para  Empresas.",
+    "headline2": "Tu Crecimiento Comienza Aquí.",
+    "subHeadline": "Financiamiento disponible en tan solo 24–48 horas  sin garantía, sin estrés.",
+    "socialProof": "2,000+ negocios obtuvieron $5K–$5M sin esperar en bancos",
     "businessOwnerSmiling": "Dueño de negocio sonriendo"
   },
   "whoQualifies": {
@@ -109,6 +152,48 @@
     "yearInBusiness": "Al menos 1 año en el negocio",
     "monthlyRevenue": "$10k+ de ingresos mensuales",
     "allCredit": "Todo crédito considerado (sujeto a aprobación)"
+  },
+  "why": {
+    "pageTitle": "Por Qué WispFi | Financiamiento Rápido y Flexible para Empresas",
+    "metaDesc": "Descubre por qué miles de pequeñas empresas eligen WispFi para soluciones de financiamiento rápidas y flexibles.",
+    "heroSubtitle": "Aprobaciones rápidas. Términos flexibles. Soporte real. Estamos aquí para ayudar a tu negocio a crecer.",
+    "learnOurStory": "Conoce Nuestra Historia",
+    "whyChoose": "Por Qué Elegir WispFi",
+    "whyChooseSubtitle": "Entendemos los desafíos únicos de la industria de la conectividad.",
+    "speed": "Velocidad en la que Puedes Confiar",
+    "speedDesc": "Decisiones en 24-48 horas, no en semanas. Obtén financiamiento cuando lo necesites.",
+    "expertise": "Experiencia en la Industria",
+    "expertiseDesc": "Nos especializamos en financiamiento para WISP y fibra. Hablamos tu idioma.",
+    "transparency": "Transparencia Total",
+    "transparencyDesc": "Términos claros, sin tarifas ocultas. Lo que cotizamos es lo que obtienes.",
+    "comparisonTitle": "Cómo Nos Comparamos",
+    "comparisonSubtitle": "Ve la diferencia que WispFi hace para tu negocio.",
+    "feature": "Característica",
+    "traditionalLenders": "Prestamistas Tradicionales",
+    "decisionSpeed": "Velocidad de Decisión",
+    "hours24_48": "24-48 Horas",
+    "weeks2_8": "2-8 Semanas",
+    "industryKnowledge": "Conocimiento de la Industria",
+    "wispFiberExperts": "Expertos en WISP y Fibra",
+    "genericApproach": "Enfoque Genérico",
+    "termsTransparency": "Transparencia de Términos",
+    "crystalClear": "Totalmente Claro",
+    "hiddenFees": "A menudo Tarifas Ocultas",
+    "paperwork": "Papeleo",
+    "minimal": "Mínimo",
+    "extensive": "Extenso",
+    "comparisonDisclaimer": "* Comparación basada en estándares típicos de la industria y experiencias promedio de los clientes.",
+    "successStory": "Caso de Éxito",
+    "caseStudyTitle": "Ayudando a un WISP a Escalar Rápidamente",
+    "caseStudyDesc": "Cuando un WISP regional necesitó actualizar su backhaul para competir con un operador principal, los bancos tradicionales dijeron que tomaría meses. WispFi los financió en días.",
+    "coverageIncrease": "Aumento de Cobertura",
+    "newCustomers": "Nuevos Clientes",
+    "annualRevenueBoost": "Impulso de Ingresos Anuales",
+    "testimonialQuote": "WispFi fue el único socio que entendió la urgencia de nuestro cronograma de implementación. Nos salvaron la temporada.",
+    "testimonialAuthor": "— Sarah Jenkins, CEO de Vista Broadband",
+    "ctaTitle": "¿Listo para Hacer Crecer tu Negocio?",
+    "ctaSubtitle": "Únete a los miles de proveedores de conectividad que confían en WispFi.",
+    "ctaNote": "Aplicación sin costo. Sin impacto en el puntaje de crédito para verificar la elegibilidad."
   },
   "home": {
     "businessTypes": {
@@ -407,7 +492,14 @@
       "title": "Comienza Hoy",
       "subtitle": "Verifica tu elegibilidad en 60–90 segundos"
     },
-    "compliance": "†Los tiempos y montos de financiamiento varían por solicitante y están sujetos a aprobación. WispFi no es un banco. Aplican términos y condiciones."
+    "disclaimer": "Los tiempos de aprobación y financiamiento varían por solicitante y están sujetos a aprobación. WispFi no es un banco. Aplican términos y condiciones.",
+    "phoneNumber": "(818) 858-0184",
+    "emailAddress": "sales@wispfi.com"
+  },
+  "caseStudies": {
+    "pageTitle": "Resultados Reales, Negocios Reales",
+    "pageSubtitle": "Historias de éxito centradas en el beneficio de propietarios de todo el país.",
+    "title1": "Aumento del 42% en ingresos en 3 meses"
   },
   "contact": {
     "hero": {
@@ -641,7 +733,129 @@
     "checkMyEligibility": "Verificar Mi Elegibilidad",
     "talkToSpecialist": "Hablar con un Especialista",
     "noHardPull": "Sin consulta de crédito dura para precalificar.",
-    "learnMore": "Más Información"
+    "learnMore": "Más Información",
+    "wisp": {
+      "title": "Proveedores de Servicios de Internet Inalámbrico (WISP)",
+      "challenge": "El Desafío",
+      "challengeDesc": "Los WISP se enfrentan a desafíos únicos de flujo de caja con fluctuaciones estacionales de ingresos, actualizaciones urgentes de torres y fallas de equipos que no pueden esperar los procesos de aprobación bancaria tradicionales.",
+      "useCases": "Casos de Uso de Financiamiento Comunes",
+      "useCase1": "Depósitos de arrendamiento de torres y adquisición de sitios",
+      "useCase2": "Actualizaciones de equipos CBRS y expansión de espectro",
+      "useCase3": "Intercambios de equipos de backhaul de emergencia",
+      "useCase4": "Actualizaciones de infraestructura estacional",
+      "useCase5": "Equipos de expansión de capacidad de red",
+      "solution": "Nuestra Solución",
+      "solutionDesc": "Financiamiento de vía rápida diseñado específicamente para operaciones de ISP inalámbrico. Entendemos sus patrones de ingresos y ofrecemos términos de pago flexibles que se alinean con su flujo de caja estacional.",
+      "results": "Resultados Esperados",
+      "result1": "Actualizaciones de equipos completadas en días, no en meses",
+      "result2": "Mejora de la fiabilidad del servicio y satisfacción del cliente",
+      "result3": "Reducción del tiempo de inactividad y aumento del potencial de ingresos"
+    },
+    "fiber": {
+      "title": "Proveedores de Redes de Fibra",
+      "challengeDesc": "Las construcciones de fibra requieren un capital inicial sustancial con largos períodos de recuperación. Los prestamistas tradicionales a menudo no comprenden la economía y los plazos de proyectos únicos de la industria de la fibra.",
+      "useCase1": "Equipos de empalme de fibra y fusionadoras",
+      "useCase2": "Maquinaria de micro-trinchado y equipos de perforación",
+      "useCase3": "OTDRs y equipos de prueba",
+      "useCase4": "Remolques de empalme y unidades móviles",
+      "useCase5": "Inventario de conductos y cables",
+      "solutionDesc": "Financiamiento especializado para infraestructura de fibra con términos que coinciden con el ciclo de vida de tu proyecto. Proporcionamos capital de trabajo para materiales, mano de obra y equipos mientras tu red genera ganancias.",
+      "result1": "Expansión y despliegue de red acelerados",
+      "result2": "Aumento de la cuota de mercado en áreas de servicio objetivo",
+      "result3": "Tiempo más rápido de obtención de ingresos para nuevas áreas de servicio"
+    },
+    "telecom": {
+      "title": "Empresas de Infraestructura de Telecomunicaciones",
+      "challengeDesc": "Las empresas de infraestructura necesitan acceso inmediato a capital para grandes compras de equipos, reparaciones de emergencia y actualizaciones tecnológicas que no pueden esperar largos procesos de aprobación.",
+      "useCase1": "Renovación y actualizaciones de equipos NOC",
+      "useCase2": "Instalaciones de enlaces de microondas",
+      "useCase3": "Reemplazos de generadores de emergencia",
+      "useCase4": "Sistemas críticos de monitoreo de red",
+      "useCase5": "Equipos de redundancia y respaldo",
+      "solutionDesc": "Financiamiento de implementación rápida para necesidades críticas de infraestructura. Nuestro proceso optimizado te proporciona el capital que necesitas para equipos, reparaciones de emergencia y actualizaciones estratégicas en cuestión de horas.",
+      "result1": "Tiempo de inactividad de la red y interrupciones del servicio minimizados",
+      "result2": "Rendimiento y fiabilidad de la red mejorados",
+      "result3": "Ventaja competitiva a través de la rápida adopción de tecnología"
+    },
+    "broadband": {
+      "title": "Inalámbrico, Fibra y Banda Ancha",
+      "subtitle": "Financiamiento que mantiene tu red en crecimiento, sin esperar meses por aprobaciones.",
+      "description": "Construir y mantener redes de acceso requiere mucho capital. Desde arrendamientos de torres y camiones de empalme hasta kits CPE y backhaul de emergencia, las necesidades de efectivo rara vez coinciden con los ciclos de facturación. Proporcionamos capital de trabajo rápido para que puedas iluminar nuevas áreas de servicio, reemplazar equipos defectuosos y escalar la capacidad a medida que aumenta la demanda.",
+      "challengeTitle": "El Desafío",
+      "challenge1": "Alto gasto de capital inicial (arrendamientos de torres/sitios, zanjas, permisos)",
+      "challenge2": "Largos plazos de entrega de proveedores y requisitos de pago por adelantado",
+      "challenge3": "Fallas no planificadas (backhaul, óptica, energía) que no pueden esperar",
+      "challenge4": "Acelerones de crecimiento (MDUs, nuevas subdivisiones, demanda estacional)",
+      "useCasesTitle": "Casos de Uso de Financiamiento Comunes",
+      "useCase1": "Construcciones de última milla (drops, ONTs, kits CPE)",
+      "useCase2": "Depósitos de arrendamiento de torres/azoteas y adquisición de sitios",
+      "useCase3": "Actualizaciones CBRS/espectro; reemplazos de microondas/backhaul",
+      "useCase4": "Expansiones OLT/ONU; equipos de empalme de fibra y repuestos",
+      "useCase5": "Aumentos de capacidad estacional e impulsos de adquisición de clientes",
+      "solutionTitle": "Nuestra Solución",
+      "solutionDesc": "Decisiones rápidas (a menudo 24–48h), pagos semanales flexibles vinculados a los ingresos, y renovaciones que escalan a medida que creces. No se requiere consulta de crédito dura para precalificar. El financiamiento generalmente oscila entre $25k y $2M dependiendo de los ingresos y el tiempo en el negocio.",
+      "requirement1": "Al menos 1 año en el negocio",
+      "requirement2": "$10k+/mes de ingresos",
+      "requirement3": "Con sede en EE. UU.",
+      "faqTitle": "Preguntas Frecuentes",
+      "faq1Q": "¿Esto es un préstamo?",
+      "faq1A": "No. Es una compra de cuentas por cobrar futuras, comúnmente utilizada por los ISP para capital de trabajo rápido.",
+      "faq2Q": "¿Qué tan rápido podemos obtener fondos?",
+      "faq2A": "Si se aprueba, los fondos pueden estar disponibles en tan solo 24 a 48 horas.",
+      "faq3Q": "¿Podemos usar esto para equipos y construcciones?",
+      "faq3A": "Sí: kits CPE, OLT/ONU, backhaul, arrendamientos de torres, equipos de empalme, aumentos estacionales y más."
+    },
+    "stats": {
+      "title": "Éxito de la Industria en Cifras",
+      "subtitle": "Nuestro enfoque especializado ofrece resultados medibles en toda la industria de la conectividad.",
+      "approvalRate": "Tasa de Aprobación",
+      "approvalRateDesc": "para solicitudes calificadas de WISP y redes de fibra",
+      "avgFunding": "Financiamiento Promedio",
+      "avgFundingDesc": "para proyectos de infraestructura de telecomunicaciones",
+      "avgDecisionTime": "Tiempo Promedio de Decisión",
+      "avgDecisionTimeDesc": "desde la solicitud hasta la aprobación del financiamiento"
+    },
+    "equipment": {
+      "title": "¿Comprando o actualizando equipos?",
+      "description": "Financia construcción, transporte por carretera, equipos de telecomunicaciones, equipos de restaurantes y más. Conserva el flujo de caja con pagos flexibles.",
+      "asset1": "Excavadoras y Cargadoras",
+      "asset2": "Camiones y Remolques",
+      "asset3": "Equipos de Fibra y Red",
+      "explore": "Explora el Financiamiento de Equipos →"
+    },
+    "more": {
+      "title": "Más Industrias a las que Servimos",
+      "subtitle": "Entendemos las necesidades de financiamiento únicas en diversos sectores empresariales",
+      "restaurants": {
+        "title": "Restaurantes y Servicios de Alimentos",
+        "description": "Equipos de cocina, renovaciones, inventario estacional y financiamiento para expansión para restaurantes, cafeterías y negocios de alimentos."
+      },
+      "retail": {
+        "title": "Venta Minorista y Comercio Electrónico",
+        "description": "Financiamiento de inventario, almacenamiento estacional, renovaciones de tiendas y actualizaciones de sistemas POS para negocios minoristas."
+      },
+      "trucking": {
+        "title": "Transporte por Carretera y Logística",
+        "description": "Compras de vehículos, mantenimiento, costos de combustible y expansión de flota para empresas de transporte y logística."
+      },
+      "salons": {
+        "title": "Salones y Servicios de Belleza",
+        "description": "Actualizaciones de equipos, renovaciones, inventario de productos y expansión para salones, spas y negocios de belleza."
+      },
+      "contractors": {
+        "title": "Contratistas y Construcción",
+        "description": "Compras de equipos, costos de materiales, financiamiento de vehículos y financiamiento de proyectos para contratistas y constructores."
+      },
+      "wisp": {
+        "title": "Proveedores de Internet Inalámbrico",
+        "description": "Equipos de torre, actualizaciones CBRS, infraestructura de backhaul y expansión de red para WISPs."
+      }
+    },
+    "finalCta": {
+      "badge": "Tiempo Limitado: $2M+ de Financiamiento Disponible",
+      "title": "¿Listo para Ver lo que es Posible en tu Industria?",
+      "subtitle": "Obtén soluciones de financiamiento específicas de la industria diseñadas para tu modelo de negocio único y patrones de flujo de caja."
+    }
   },
   "industryTemplate": {
     "checkEligibility": "Verificar Mi Elegibilidad",
@@ -654,51 +868,71 @@
   },
   "reviews": {
     "title": "Confiado por más de 2,000 negocios",
-    "subtitle": "Comentarios reales de dueños de negocios que hemos ayudado a crecer.",
+    "subtitle": "Opiniones reales de dueños de negocios a los que hemos ayudado a crecer. Satisfacción del cliente y experiencias positivas de financiamiento empresarial de la industria de la conectividad.",
     "rating": "4.8/5",
-    "trustedBy": "Confiado por más de 2,000 negocios"
+    "trustedBy": "Confiado por más de 2,000 negocios",
+    "highlightQuote": "WispFi nos ayudó a expandirnos de 500 a 2,000 clientes en 18 meses. Su financiamiento hizo posible nuestro crecimiento.",
+    "highlightAuthor": "Sarah Martinez",
+    "highlightCompany": "CEO, Hill Country Wireless",
+    "growth": "Crecimiento",
+    "customers": "Clientes",
+    "timeline": "Plazo",
+    "trustedPlatforms": "Confiado por empresas de conectividad y verificado por plataformas líderes",
+    "reviewsCount": "Más de 2,000 Reseñas",
+    "ctaTitle": "¿Listo para Impulsar el Crecimiento de tu Negocio?",
+    "ctaSubtitle": "Únete a miles de dueños de negocios satisfechos que confían en WispFi para sus necesidades de financiamiento.",
+    "ctaButton": "Obtén Fondos Ahora",
+    "ctaNote": "Sin impacto crediticio para verificar la elegibilidad • Financiamiento en tan solo 24 horas"
   },
   "thankYou": {
     "title": "¡Gracias!",
     "subtitle": "Tu solicitud ha sido recibida y está siendo revisada por nuestros especialistas en financiamiento.",
+    "socialProof": "Confiado por más de 15,000 empresas",
+    "deployedThisWeek": "$5M+ Desplegados Esta Semana",
+    "businessesFunded": "negocios financiados",
+    "avgFundingTime": "Tiempo promedio de financiamiento:",
+    "bankLevelSecurity": "Seguridad de Nivel Bancario",
+    "clientSatisfaction": "Satisfacción del Cliente",
+    "bbbAccredited": "Acreditado por BBB",
+    "totalFunding": "Financiamiento Total Proporcionado",
+    "protectedInfo": "Su información está protegida con encriptación de grado empresarial. Somos un socio confiable en la industria de financiamiento empresarial.",
+    "testimonialQuote": "WispFi fue el único socio que entendió la urgencia de nuestro cronograma de despliegue. Salvaron nuestra temporada.",
+    "whatToExpect": "Qué esperar en tu llamada:",
+    "joinSubtitle": "Vea por qué los negocios confían en WispFi para sus necesidades de financiamiento.",
+    "reviewNeeds": "Revisar necesidades de financiamiento",
+    "reviewNeedsDesc": "Discutiremos sus requisitos comerciales específicos y sus objetivos de financiación",
+    "discussOptions": "Discutir opciones personalizadas",
+    "discussOptionsDesc": "Exploraremos soluciones de financiamiento adaptadas a su negocio",
+    "answerQuestions": "Responder cualquier pregunta que tengas",
+    "answerQuestionsDesc": "Nuestro equipo está aquí para proporcionar claridad y orientación",
+    "quickDecisions": "Decisiones rápidas para que puedas avanzar",
+    "quickDecisionsDesc": "Nos esforzamos por ofrecer aprobaciones rápidas para que puedas asegurar fondos rápidamente",
+    "expiresBadge": "Oferta por Tiempo Limitado",
+    "progress": "Progreso",
+    "complete": "Completo",
+    "joinTitle": "Únase a más de 15,000 Negocios Financiados",
+    "next48Hours": "en las próximas 48 horas",
+    "next48HoursSubtitle": "Un especialista en financiamiento se comunicará contigo para revisar tu solicitud y discutir los próximos pasos.",
+    "within2_4Hours": "En 2-4 horas",
+    "today": "Hoy",
+    "callConfirm": "Su especialista en financiación dedicado lo llamará para confirmar su información y analizar las opciones preliminares.",
+    "nextBusinessDay": "Al día hábil siguiente",
+    "reviewComplete": "Una vez que se complete la revisión, recibirá una llamada para discutir las ofertas de financiamiento personalizadas.",
+    "fundingDecision": "Decisión de financiamiento",
     "industryPages": {
       "trucking": {
         "heroTitle": "Mantén Tu Flota en Movimiento",
         "heroSubtitle": "Financiamiento rápido y confiable para camiones, remolques y operaciones.",
-        "challenges": [
-          "Altos costos de equipos",
-          "Fluctuaciones en precios de combustible",
-          "Demanda estacional"
-        ],
-        "useCases": [
-          "Compra de semi-camiones",
-          "Mantenimiento de equipos",
-          "Adelantos de combustible"
-        ],
-        "solutions": [
-          "Financiamiento de equipos",
-          "Capital de trabajo",
-          "Términos flexibles"
-        ]
+        "challenges": ["Altos costos de equipos", "Fluctuaciones en precios de combustible", "Demanda estacional"],
+        "useCases": ["Compra de semi-camiones", "Mantenimiento de equipos", "Adelantos de combustible"],
+        "solutions": ["Financiamiento de equipos", "Capital de trabajo", "Términos flexibles"]
       },
       "salons": {
         "heroTitle": "Financiamiento Hermoso para Tu Negocio de Belleza",
         "heroSubtitle": "Financiamiento rápido y flexible para equipos, renovaciones y expansión.",
-        "challenges": [
-          "Actualizaciones de equipos",
-          "Demanda estacional",
-          "Gestión de inventario"
-        ],
-        "useCases": [
-          "Sillas de salón",
-          "Equipos de spa",
-          "Renovaciones"
-        ],
-        "solutions": [
-          "Financiamiento de equipos",
-          "Capital de trabajo",
-          "Términos flexibles"
-        ]
+        "challenges": ["Actualizaciones de equipos", "Demanda estacional", "Gestión de inventario"],
+        "useCases": ["Sillas de salón", "Equipos de spa", "Renovaciones"],
+        "solutions": ["Financiamiento de equipos", "Capital de trabajo", "Términos flexibles"]
       },
       "contractors": {
         "heroTitle": "Construye Tu Negocio con Financiamiento Confiable",
@@ -726,6 +960,54 @@
       }
     }
   },
+  "thankYouCommon": {
+    "fundingDecisionDesc": "Acepte su oferta y los fondos se pueden depositar tan pronto como 1-2 días hábiles (sujeto a aprobación)",
+    "greatCompany": "¡En gran compañía!",
+    "greatCompanySubtitle": "Miles de empresas ya obtuvieron su financiamiento con WispFi. ¡Únete a su éxito!",
+    "businessesFunded": "negocios financiados",
+    "inLast12Months": "en los últimos 12 meses",
+    "totalDeployed": "$847M",
+    "totalDeployedLabel": "Financiamiento Total Desplegado",
+    "helpingGrow": "Ayudando a crecer negocios como el tuyo",
+    "avgApproval": "24 horas",
+    "avgApprovalLabel": "Tiempo Promedio de Aprobación",
+    "fromAppToOffer": "Desde la solicitud hasta la oferta.",
+    "faqTitle": "Preguntas que podrías tener",
+    "faqSubtitle": "Respuestas rápidas para que te sientas seguro sobre lo que sigue.",
+    "missCallQ": "¿Qué pasa si pierdo la llamada?",
+    "missCallA": "¡No te preocupes! Tu especialista te dejará un mensaje de voz y enviará un mensaje de texto de seguimiento. Intentarán comunicarse contigo varias veces.",
+    "howLongCallQ": "¿Cuánto dura la llamada?",
+    "howLongCallA": "Generalmente es una llamada breve. Revisaremos tus necesidades, explicaremos opciones y responderemos preguntas. Es amigable y sin presiones.",
+    "infoSecureQ": "¿Mi información está segura?",
+    "infoSecureA": "Absolutamente. Utilizamos cifrado de nivel bancario y nunca compartiremos tus datos. Tu privacidad y seguridad son nuestras principales prioridades.",
+    "notApprovedQ": "¿Qué pasa si no me aprueban?",
+    "notApprovedA": "Trabajamos con múltiples prestamistas y tenemos varios programas. Si uno no encaja, exploraremos alternativas que puedan funcionar para ti.",
+    "needReachUs": "¿Necesitas Contactarnos?",
+    "needReachUsSubtitle": "Estamos aquí para ayudarte con cualquier pregunta o inquietud.",
+    "speakSpecialist": "Habla con un Especialista",
+    "callDirectly": "Llámanos directamente para asistencia inmediata",
+    "businessHours": "Lunes a viernes, 8 AM - 8 PM EST",
+    "questionsOrConcerns": "¿Preguntas o Inquietudes?",
+    "emailResponse": "Envíanos un correo electrónico y responderemos en 2 horas",
+    "typicalResponse": "Generalmente respondemos en 2 horas",
+    "finalReassurance": "Estamos encantados de conectar contigo y ayudarte a crecer. Ten tu teléfono a mano: tu especialista en financiamiento dedicado te llamará pronto."
+  },
+  "dealer": {
+    "title": "Compras a Concesionario vs. Compras a Particulares",
+    "subtitle": "Trabajamos con ambos tipos de compra para que obtengas el equipo que necesitas",
+    "dealerTab": "Compra a Concesionario",
+    "privateTab": "Vendedor Particular",
+    "dealerCardTitle": "Compras a Concesionario",
+    "dealerPoint1": "Proceso optimizado con proveedores establecidos",
+    "dealerPoint2": "Garantía y soporte de servicio incluidos",
+    "dealerPoint3": "Aprobación y financiamiento más rápidos",
+    "dealerPoint4": "Pago directo al concesionario",
+    "privateCardTitle": "Vendedor Particular",
+    "privatePoint1": "Se requiere verificación adicional",
+    "privatePoint2": "Podría ser necesaria una inspección del equipo",
+    "privatePoint3": "Se requiere documentación de transferencia de título",
+    "privatePoint4": "Oportunidades de precios competitivos"
+  },
   "components": {
     "exitIntentModal": {
       "title": "No Dejes Dinero Sobre la Mesa",
@@ -739,7 +1021,7 @@
       "googleReviews": "Reseñas de Google",
       "trustpilot": "Trustpilot",
       "disclaimer": "Calificaciones basadas en comentarios de clientes agregados en múltiples plataformas.",
-      "typicalFundingValue": "~72 hs"
+      "typicalFundingValue": "~48 horas"
     },
     "trustSecurity": {
       "sslSecure": "SSL Seguro",
@@ -814,8 +1096,8 @@
         "highlight": "y asequible"
       },
       "subheadline": "Pagadero a plazos • Sin tarifas ocultas",
-      "disclaimer": "*Los plazos varían según el negocio y requieren aprobación.",
-      "socialProof": "Únase a más de 1,000 compradores de equipos que cerraron en menos de 5 días",
+      "disclaimer": "Los plazos varían y requieren aprobación.",
+      "socialProof": "Más de 1,000 cierres en menos de 5 días",
       "cta": {
         "checkOptions": "Ver Opciones de Financiamiento",
         "talkToSpecialist": "Hablar con Especialista"
@@ -871,7 +1153,31 @@
       "testimonialAuthor": "— Sarah Jenkins, CEO de Vista Broadband",
       "ctaTitle": "¿Listo para Hacer Crecer Tu Negocio?",
       "ctaSubtitle": "Únete a los miles de proveedores de conectividad que confían en WispFi.",
-      "ctaNote": "Sin costo para aplicar. Sin impacto en el puntaje de crédito para verificar elegibilidad."
+      "ctaNote": "Sin costo para aplicar. Sin impacto en el puntaje de crédito para verificar elegibilidad.",
+      "expiresBadge": "Oferta por Tiempo Limitado",
+      "progress": "Progreso",
+      "complete": "Completo",
+      "eligibleTrue": "¡Felicidades! Usted es Elegible",
+      "eligibleTrueDesc": "Según su información, califica para nuestros programas de financiamiento.",
+      "eligibleFalse": "Solicitud Recibida",
+      "eligibleFalseDesc": "Necesitamos más información para terminar de procesar su solicitud.",
+      "eligibleDefault": "Gracias",
+      "eligibleDefaultDesc": "Su solicitud ha sido recibida.",
+      "socialProof": "Confiado por más de 15,000 negocios",
+      "deployedThisWeek": "$5M+ Desplegados Esta Semana",
+      "joinTitle": "Únase a más de 15,000 Negocios Financiados",
+      "joinSubtitle": "Vea por qué los negocios confían en WispFi para sus necesidades de financiamiento.",
+      "totalFunding": "Financiamiento Total Proporcionado",
+      "avgFundingTime": "Tiempo promedio de financiamiento:",
+      "phoneNumber": "(818) 858-0184",
+      "emailAddress": "sales@wispfi.com",
+      "businessHoursLine1": "Lun-Vie: 9AM-6PM EST",
+      "businessHoursLine2": "Sáb: 10AM-4PM EST",
+      "businessesFunded": "Negocios Financiados",
+      "clientSatisfaction": "Satisfacción del Cliente",
+      "bankLevelSecurity": "Seguridad de Nivel Bancario",
+      "bbbAccredited": "Acreditado por BBB",
+      "protectedInfo": "Su información está protegida con encriptación de grado empresarial. Somos un socio confiable en la industria de financiamiento empresarial."
     },
     "mcaForm": {
       "steps": {
@@ -879,7 +1185,7 @@
         "businessDetails": "Detalles del Negocio"
       },
       "labels": {
-        "businessName": "Nombre",
+        "businessName": "Nombre de su negocio",
         "timeInBusiness": "¿Tiempo en el negocio?",
         "timeInBusinessHint": "(Mínimo 1 año)",
         "firstName": "Nombre",
@@ -1129,7 +1435,10 @@
     "reviewsSection": {
       "title": "Lo Que Dicen Nuestros Clientes",
       "subtitle": "Negocios reales, resultados reales",
-      "verifiedClient": "Cliente Verificado"
+      "verifiedClient": "Cliente Verificado",
+      "review1Text": "WispFi nos ayudó a expandirnos de 500 a 2,000 clientes en 18 meses. Su financiación hizo posible nuestro crecimiento.",
+      "review2Text": "El proceso de solicitud fue increíblemente rápido y el equipo realmente entendió nuestro modelo de negocio único.",
+      "review3Text": "Pudimos actualizar nuestro equipo y mejorar la fiabilidad del servicio gracias a la rápida financiación."
     },
     "reviewsCarousel": {
       "badge": " Únete a más de 15,000 negocios financiados",
@@ -1200,7 +1509,7 @@
       "quote5": "Necesitábamos expandir nuestra flota rápidamente para satisfacer la demanda. La aprobación fue rápida y el financiamiento se manejó profesionalmente."
     },
     "qualificationCriteria": {
-      "title": "¿Tu Negocio Es Elegible para Financiamiento MCA Rápido?",
+      "title": "¿Califica su Negocio para Préstamos de Equipamiento Acelerados?",
       "subtitle": "La mayoría de los negocios establecidos califican. Verifica los requisitos abajo:",
       "minimumRequirements": "Requisitos Mínimos",
       "idealCandidates": "Candidatos Ideales",
@@ -1222,7 +1531,7 @@
       "idealProfitableDesc": "Flujo de caja positivo demuestra estabilidad",
       "approvalRateValue": "85%+",
       "approvalRate": "Tasa de aprobación",
-      "avgDecisionValue": "24-48hrs",
+      "avgDecisionValue": "24-48 horas",
       "avgDecision": "Decisión promedio",
       "fundingRangeValue": "$5K-$5M",
       "fundingRange": "Rango de financiamiento",
@@ -1230,14 +1539,19 @@
       "ratesFrom": "Tasas desde"
     },
     "exitIntentOffer": {
-      "title": "Prepárate para Tu Llamada de Éxito",
+      "title": "No Dejes Dinero Sobre la Mesa",
+      "finalReassurance": "Estamos emocionados de conectar contigo y ayudarte a crecer. Mantén tu teléfono cerca — tu especialista de financiamiento dedicado te llamará pronto.",
+      "supportPhone": "1-800-WISPFI-1",
+      "supportEmail": "support@wispfi.com",
       "specialistCall": "Tu especialista de financiamiento llamará dentro de 24 horas",
       "specialistCallDesc": "Tendrán los detalles de tu solicitud listos y discutirán tus mejores opciones de financiamiento.",
       "whatToExpect": "Qué esperar en tu llamada:",
       "expect1": "Revisión de tu solicitud y necesidades de financiamiento",
       "expect2": "Discusión de programas de financiamiento disponibles (hasta $2M)",
       "expect3": "Recomendaciones personalizadas basadas en tu negocio",
-      "expect4": "Próximos pasos para asegurar tu financiamiento rápidamente"
+      "expect4": "Próximos pasos para asegurar tu financiamiento rápidamente",
+      "socialProof": "Este mes: 347 negocios financiados • Promedio: $125K • 94% tasa de aprobación",
+      "keepPhoneNearby": "Mantenga su teléfono cerca: su especialista tiene espacios de financiación prioritarios disponibles."
     },
     "mobileStickyCTA": {
       "applyEF": "Solicitar Financiamiento de Equipos",

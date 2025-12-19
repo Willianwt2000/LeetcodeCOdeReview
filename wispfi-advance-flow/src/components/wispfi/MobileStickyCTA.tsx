@@ -11,9 +11,9 @@ export const MobileStickyCTA = () => {
   const isMobile = useIsMobile();
   const location = useLocation();
   const { t } = useTranslation();
-  
+
   // Auto-detect form type based on current route
-  const formType = location.pathname === '/equipment-financing' ? 'ef' : 'general';
+  const formType = location.pathname === "/equipment-financing" ? "ef" : "general";
 
   if (!isMobile) return null;
 
@@ -21,21 +21,23 @@ export const MobileStickyCTA = () => {
     <>
       <div className="fixed bottom-0 left-0 right-0 z-40 bg-background/95 backdrop-blur-sm border-t p-3 sm:hidden safe-area-inset-bottom">
         <div className="container flex gap-2 px-4 mx-auto max-w-full">
-          <Button 
-            variant="cta" 
-            size="lg" 
+          <Button
+            variant="cta"
+            size="lg"
             className="flex-1 min-h-[48px] touch-friendly-button touch-feedback"
             onClick={() => setOpen(true)}
           >
-            {formType === 'ef' ? t('components.mobileStickyCTA.applyEF') : t('components.mobileStickyCTA.checkEligibility')}
+            {formType === "ef"
+              ? t("components.mobileStickyCTA.applyEF")
+              : t("components.mobileStickyCTA.checkEligibility")}
           </Button>
-          <Button 
-            variant="outline" 
-            size="lg" 
+          <Button
+            variant="outline"
+            size="lg"
             className="min-h-[48px] px-4 touch-friendly-button touch-feedback"
             asChild
           >
-            <a href="tel:+18188580184" aria-label={t('components.mobileStickyCTA.callUs')}>
+            <a href="tel:+18188580184" aria-label={t("components.mobileStickyCTA.callUs")}>
               <Phone className="h-5 w-5" />
             </a>
           </Button>

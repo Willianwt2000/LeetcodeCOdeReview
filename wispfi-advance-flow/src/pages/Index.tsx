@@ -91,18 +91,18 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Helmet>
-        <title>{t('meta.index.title')}</title>
+        <title>WispFi MCA Funding | Funding available in as little as 24–48 hours*</title>
         <meta
           name="description"
-          content={t('meta.index.description')}
+          content="WispFi helps small businesses access working capital fast. Not a bank loan. Check eligibility quickly, with no obligation."
         />
         <link rel="canonical" href={canonical("/")} />
 
         {/* OpenGraph Tags */}
-        <meta property="og:title" content={t('meta.index.title')} />
+        <meta property="og:title" content="WispFi MCA Funding | Funding available in as little as 24–48 hours*" />
         <meta
           property="og:description"
-          content={t('meta.index.description')}
+          content="WispFi helps small businesses access working capital fast. Not a bank loan. Check eligibility quickly, with no obligation."
         />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/og/wispfi-default.jpg" />
@@ -142,26 +142,26 @@ const Index = () => {
             mainEntity: [
               {
                 "@type": "Question",
-                name: t("home.faq.q1"),
+                name: "Is this a loan?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: t("home.faq.a1"),
+                  text: "No. It's a purchase of future receivables, also known as an MCA.",
                 },
               },
               {
                 "@type": "Question",
-                name: t("home.faq.q2"),
+                name: "How fast can I get funding?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: t("home.faq.a2"),
+                  text: "If approved, funding as soon as 1–2 business days (subject to approval).",
                 },
               },
               {
                 "@type": "Question",
-                name: t("home.faq.q3"),
+                name: "Do you check my credit?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: t("home.faq.a3"),
+                  text: "No hard pull to prequalify. We look at overall business performance.",
                 },
               },
             ],

@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Star, CheckCircle2, DollarSign, BadgeCheck, Users, Award } from "lucide-react";
 import "@/styles/home.hero.card.css";
 import MCAFormFloat from "@/components/MCAFormFloat";
+import { IndustryChips } from "@/components/wispfi/IndustryChips";
 
 import heroPoster from "@/assets/hero/hero-golden-hour.jpg";
 import heroMobile from "@/assets/hero/hero-mobile-optimized.webp";
@@ -49,22 +50,28 @@ export const HeroVideo: React.FC<HeroVideoProps> = ({ onOpenModal }) => {
         />
       </div>
 
-      <div className="container py-6 sm:py-16 grid gap-4 lg:gap-6 lg:grid-cols-2 items-end sm:items-center min-h-[550px] sm:min-h-[600px] lg:min-h-[580px] xl:min-h-[560px] 2xl:min-h-[540px]">
-        <div className="w-full max-w-xl animate-fade-in order-1 lg:pt-32 text-center lg:text-left mb-8 sm:mb-0 pt-[50vh] sm:pt-0">
+      <div className="container py-6 sm:py-16 grid gap-4 lg:gap-6 lg:grid-cols-2 items-end sm:items-start min-h-[550px] sm:min-h-[600px] lg:min-h-[620px] xl:min-h-[600px] 2xl:min-h-[580px]">
+        {/* <div className="w-full max-w-xl animate-fade-in order-1 lg:pt-60 text-center lg:text-left mb-20  pt-[50vh] sm:pt-[310px]"> */}
+        <div className="hero-container w-full max-w-xl animate-fade-in order-1 text-center lg:text-left mb-20
+  pt-[50vh] sm:pt-[19.375rem] lg:pt-60">
           <p className="text-sm font-semibold text-hero-pre hero-text-shadow mb-2 hero-sub-mobile sm:text-sm">
             {t("hero.preHeadline")}
           </p>
-          <h1 className="text-[clamp(1.2rem,5vw,1.5rem)] leading-[1.2] sm:text-3xl lg:text-[44px] lg:leading-[52px] font-bold text-hero-primary hero-text-shadow mb-4">
-            {t("hero.headline")}
-          </h1>
+          <h1 className="flex home-hero-title text-hero-primary text-[25] hero-text-shadow mb-4 font-bold">{t("hero.headline")}</h1>
+          <h1 className="flex home-hero-title text-hero-primary  hero-text-shadow mb-4 font-bold">{t("hero.headline2")}</h1>
+
+          <div className="hidden sm:grid">
+            <IndustryChips />
+          </div>
           <p className="text-[clamp(0.9rem,3.2vw,1rem)] leading-[1.35] sm:text-base font-semibold text-hero-sub hero-text-shadow mb-4">
             {t("hero.subHeadline")}
           </p>
 
           {/* Enhanced social proof section */}
-          <div className="mb-3 p-4 rounded-xl bg-gradient-to-r from-orange-500/20 via-white/15 to-blue-500/20 backdrop-blur-sm border border-white/30 shadow-lg">
-            <div className="flex items-center justify-center gap-3">
-              <div className="flex items-center animate-pulse" aria-label="5 out of 5 stars">
+          <div className="mb-3 p-3 sm:p-4 rounded-xl bg-gradient-to-r from-orange-500/20 via-white/15 to-blue-500/20 backdrop-blur-sm border border-white/30 shadow-lg home-hero-social">
+            <div className="flex items-center justify-center flex-col gap-3">
+              {/* Estrellas con animación */}
+              <div className="flex items-center gap-1 animate-pulse" aria-label="5 out of 5 stars">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star
                     key={i}
@@ -73,20 +80,19 @@ export const HeroVideo: React.FC<HeroVideoProps> = ({ onOpenModal }) => {
                   />
                 ))}
               </div>
-              <div className="flex items-center gap-2">
-                <Users className="h-4 w-4 text-white/90" />
-                <span className="text-white font-medium hero-text-shadow text-sm">
-                  {t("hero.socialProof")}
-                </span>
-              </div>
+
+              {/* Span con el texto */}
+              <span className="text-white font-semibold hero-text-shadow text-ls sm:text-sm text-center leading-tight">
+                {t("hero.socialProof")}
+              </span>
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-3">
+          <div className="flex flex-col sm:flex-row gap-3 sticky bottom-0   p-4 sm:p-0 sm:static to-transparent sm:bg-none sm:via-transparent sm:from-transparent sm:to-transparent pt-6 sm:pt-0 items-center sm:justify-center sm:gap-4 home-hero-cta-row">
             <Button
               variant="cta"
               size="lg"
-              className="w-full sm:w-auto h-[44px] px-3 py-2 sm:px-5 sm:py-3 text-[15px] sm:text-base rounded-[14px]"
+              className="w-full  h-[44px] px-3 py-2 sm:px-5 sm:py-3 text-[15px] sm:text-base rounded-[14px] sm:min-w-[210px] home-hero-cta-btn"
               onClick={scrollToCard}
             >
               {t("cta.checkEligibilityNow")}
@@ -94,7 +100,7 @@ export const HeroVideo: React.FC<HeroVideoProps> = ({ onOpenModal }) => {
             <Button
               variant="brandBlue"
               size="lg"
-              className="sm:hidden w-full h-[44px] px-3 py-2 text-[15px] rounded-[14px]"
+              className="sm:hidden w-full h-[44px] px-3 py-2 text-[15px] rounded-[14px] home-hero-cta-btn"
               asChild
             >
               <a href="/contact">{t("cta.talkToSpecialist")}</a>
@@ -102,28 +108,32 @@ export const HeroVideo: React.FC<HeroVideoProps> = ({ onOpenModal }) => {
             <Button
               variant="brandBlue"
               size="lg"
-              className="hidden sm:inline-flex w-full sm:w-auto px-3 py-2 sm:px-5 sm:py-3 text-[15px] sm:text-base rounded-[14px]"
+              className="hidden sm:inline-flex w-full  px-3 py-2 sm:px-5 sm:py-3 text-[15px] sm:text-base rounded-[14px] home-hero-cta-btn"
               asChild
             >
               <a href="/contact">{t("cta.talkToSpecialist")}</a>
             </Button>
           </div>
-
           <WhoQualifies />
         </div>
 
         <MCAFormFloat />
       </div>
+    <div className="pb-[clamp(16px,3vh,40px)]">
+      <button className="px-6 py-3 rounded-xl">
+        CTA
+      </button>
+    </div>
     </section>
   );
 };
 
 export const WhoQualifies = () => {
   const { t } = useTranslation();
-  
+
   return (
-    <section>
-      <div className="hidden sm:block mt-6 p-5 bg-gradient-to-br from-white/98 to-white/92 backdrop-blur-lg border-2 border-white/40 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-[1.02]">
+    <section className="mb-[-170px] mt-5">
+      <div className="hidden  sm:block mt-6 p-5 bg-gradient-to-br from-white/98 to-white/92 backdrop-blur-lg border-2 border-white/40 rounded-2xl shadow-2xl hover:shadow-3xl  transition-all duration-300 hover:scale-[1.02]">
         <div className="flex items-center gap-2 mb-4">
           <div className="p-1.5 rounded-lg bg-gradient-to-br from-green-100 to-emerald-50">
             <BadgeCheck className="h-5 w-5 text-green-600" />

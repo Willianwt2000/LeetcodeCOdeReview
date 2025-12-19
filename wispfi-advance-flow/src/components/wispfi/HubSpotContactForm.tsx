@@ -1,7 +1,7 @@
-import { useEffect, useState, useRef } from 'react';
-import { Button } from '@/components/ui/button';
-import { useAnalytics } from '@/hooks/useAnalytics';
-import { Skeleton } from '@/components/ui/skeleton';
+import { useEffect, useState, useRef } from "react";
+import { Button } from "@/components/ui/button";
+import { useAnalytics } from "@/hooks/useAnalytics";
+import { Skeleton } from "@/components/ui/skeleton";
 import { attachHSListener } from "@/lib/hs/hsPostMessageBridge";
 import { ensureHubSpotForms } from "@/lib/hs/ensureHubSpotForms";
 
@@ -12,10 +12,10 @@ interface HubSpotContactFormProps {
 }
 
 // Add DNS preconnect and prefetch for faster loading
-if (typeof document !== 'undefined') {
+if (typeof document !== "undefined") {
   const addLink = (rel: string, href: string) => {
     if (!document.querySelector(`link[rel="${rel}"][href="${href}"]`)) {
-      const link = document.createElement('link');
+      const link = document.createElement("link");
       link.rel = rel;
       link.href = href;
       document.head.appendChild(link);
@@ -23,39 +23,39 @@ if (typeof document !== 'undefined') {
   };
 
   const addRecaptchaScript = () => {
-    if (document.querySelector('script[data-recaptcha-parent]')) return;
-    const s = document.createElement('script');
-    s.setAttribute('data-recaptcha-parent', 'true');
-    s.src = 'https://www.google.com/recaptcha/api.js';
+    if (document.querySelector("script[data-recaptcha-parent]")) return;
+    const s = document.createElement("script");
+    s.setAttribute("data-recaptcha-parent", "true");
+    s.src = "https://www.google.com/recaptcha/api.js";
     s.async = true;
     s.defer = true;
     s.onerror = () => {
       // Fallback domain
-      const alt = document.createElement('script');
-      alt.setAttribute('data-recaptcha-parent', 'true');
-      alt.src = 'https://www.recaptcha.net/recaptcha/api.js';
+      const alt = document.createElement("script");
+      alt.setAttribute("data-recaptcha-parent", "true");
+      alt.src = "https://www.recaptcha.net/recaptcha/api.js";
       alt.async = true;
       alt.defer = true;
       document.head.appendChild(alt);
     };
     document.head.appendChild(s);
   };
-  
-  addLink('preconnect', 'https://js.hsforms.net');
-  addLink('preconnect', 'https://forms-na1.hsforms.com');
-  addLink('dns-prefetch', 'https://forms-na1.hsforms.com');
-  addLink('preconnect', 'https://www.google.com');
-  addLink('preconnect', 'https://www.gstatic.com');
-  addLink('preconnect', 'https://www.recaptcha.net');
+
+  addLink("preconnect", "https://js.hsforms.net");
+  addLink("preconnect", "https://forms-na1.hsforms.com");
+  addLink("dns-prefetch", "https://forms-na1.hsforms.com");
+  addLink("preconnect", "https://www.google.com");
+  addLink("preconnect", "https://www.gstatic.com");
+  addLink("preconnect", "https://www.recaptcha.net");
   addRecaptchaScript();
 
   // Preload the HubSpot forms script for instant parsing
   if (!document.querySelector('link[rel="preload"][href="https://js.hsforms.net/forms/v2.js"]')) {
-    const l = document.createElement('link');
-    l.rel = 'preload';
+    const l = document.createElement("link");
+    l.rel = "preload";
     // @ts-ignore - link.as not in older TS libdom
-    l.as = 'script';
-    l.href = 'https://js.hsforms.net/forms/v2.js';
+    l.as = "script";
+    l.href = "https://js.hsforms.net/forms/v2.js";
     document.head.appendChild(l);
   }
 }
@@ -70,12 +70,11 @@ export const HubSpotContactForm = ({ onFormReady, onFormSubmit, className = "" }
   const initializedRef = useRef(false);
   const observerRef = useRef<MutationObserver | null>(null);
   const retriedRef = useRef(false);
-  
 
   useEffect(() => {
-    console.log('[EF TRACK] HubSpotContactForm start useEffect');
-    if (typeof window === 'undefined') return;
-    console.log('[EF TRACK] HubSpotContactForm end useEffect');
+    console.log("[EF TRACK] HubSpotContactForm start useEffect");
+    if (typeof window === "undefined") return;
+    console.log("[EF TRACK] HubSpotContactForm end useEffect");
 
     let mounted = true;
     const uniqueId = `hs-contact-${Math.random().toString(36).slice(2)}`;
@@ -91,7 +90,7 @@ export const HubSpotContactForm = ({ onFormReady, onFormSubmit, className = "" }
 
       // Ensure single mount: if content exists, mark as loaded and skip creating again
       const container = formRef.current;
-      if (container.querySelector('iframe, form, input, select, textarea')) {
+      if (container.querySelector("iframe, form, input, select, textarea")) {
         loadedRef.current = true;
         setIsLoaded(true);
         setHasError(false);
@@ -106,7 +105,7 @@ export const HubSpotContactForm = ({ onFormReady, onFormSubmit, className = "" }
           observerRef.current?.disconnect();
           const obs = new MutationObserver(() => {
             if (!formRef.current) return;
-            if (formRef.current.querySelector('iframe, form, input, select, textarea')) {
+            if (formRef.current.querySelector("iframe, form, input, select, textarea")) {
               loadedRef.current = true;
               setIsLoaded(true);
               setHasError(false);
@@ -122,19 +121,19 @@ export const HubSpotContactForm = ({ onFormReady, onFormSubmit, className = "" }
             if (!mounted || loadedRef.current) return;
             const c = formRef.current;
             if (!c) return;
-            const hasContent = !!c.querySelector('iframe, form, input, select, textarea');
+            const hasContent = !!c.querySelector("iframe, form, input, select, textarea");
             if (!retriedRef.current && !hasContent) {
               retriedRef.current = true;
-              c.innerHTML = '';
+              c.innerHTML = "";
               initializedRef.current = false;
               setTimeout(() => initForm(), 0);
             }
           }, 8000);
         };
 
-        console.log('[EF TRACK] HubSpotContactForm waiting for ensureHubSpotForms...');
+        console.log("[EF TRACK] HubSpotContactForm waiting for ensureHubSpotForms...");
         await ensureHubSpotForms();
-        console.log('[EF TRACK] HubSpotContactForm ensured HubSpot forms loaded');
+        console.log("[EF TRACK] HubSpotContactForm ensured HubSpot forms loaded");
 
         (window as any).hbspt.forms.create({
           region: "na1",
@@ -149,54 +148,53 @@ export const HubSpotContactForm = ({ onFormReady, onFormSubmit, className = "" }
             onFormReady?.();
 
             trackEvent({
-              action: 'contact_start',
-              category: 'engagement',
-              label: 'contact_form',
+              action: "contact_start",
+              category: "engagement",
+              label: "contact_form",
             });
 
             // Cleanup stray business name labels
             setTimeout(() => {
               const removeStrayTextNodes = (container: Element) => {
-                const walker = document.createTreeWalker(
-                  container,
-                  NodeFilter.SHOW_TEXT,
-                  null
-                );
-                
+                const walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT, null);
+
                 const textNodesToRemove: Text[] = [];
                 let node: Text | null;
-                
-                while (node = walker.nextNode() as Text) {
+
+                while ((node = walker.nextNode() as Text)) {
                   const text = node.textContent?.trim().toLowerCase();
-                  if (text && (
-                    text === 'business name' ||
-                    text === 'company name' ||
-                    text.includes('business name') ||
-                    text.includes('company name')
-                  )) {
+                  if (
+                    text &&
+                    (text === "business name" ||
+                      text === "company name" ||
+                      text.includes("business name") ||
+                      text.includes("company name"))
+                  ) {
                     textNodesToRemove.push(node);
                   }
                 }
-                
-                textNodesToRemove.forEach(textNode => {
+
+                textNodesToRemove.forEach((textNode) => {
                   textNode.parentNode?.removeChild(textNode);
                 });
               };
 
               const removeOrphanedLabels = (container: Element) => {
-                const labels = container.querySelectorAll('label');
-                labels.forEach(label => {
+                const labels = container.querySelectorAll("label");
+                labels.forEach((label) => {
                   const text = label.textContent?.trim().toLowerCase();
-                  if (text && (
-                    text === 'business name' ||
-                    text === 'company name' ||
-                    text.includes('business name') ||
-                    text.includes('company name')
-                  )) {
-                    const associatedInput = label.getAttribute('for') ? 
-                      container.querySelector(`#${label.getAttribute('for')}`) : null;
-                    
-                    if (!associatedInput || !associatedInput.closest('.hs-form-field')) {
+                  if (
+                    text &&
+                    (text === "business name" ||
+                      text === "company name" ||
+                      text.includes("business name") ||
+                      text.includes("company name"))
+                  ) {
+                    const associatedInput = label.getAttribute("for")
+                      ? container.querySelector(`#${label.getAttribute("for")}`)
+                      : null;
+
+                    if (!associatedInput || !associatedInput.closest(".hs-form-field")) {
                       label.remove();
                     }
                   }
@@ -204,7 +202,7 @@ export const HubSpotContactForm = ({ onFormReady, onFormSubmit, className = "" }
               };
 
               const addStrayLabelCSS = (container: Element) => {
-                const style = document.createElement('style');
+                const style = document.createElement("style");
                 style.textContent = `
                   .hubspot-contact-form-container label:not([for]):empty,
                   .hubspot-contact-form-container label[for=""]:empty,
@@ -230,12 +228,12 @@ export const HubSpotContactForm = ({ onFormReady, onFormSubmit, className = "" }
                 addStrayLabelCSS(container);
 
                 // Also clean inside iframe if present
-                const iframe = container.querySelector('.hs-form-iframe') as HTMLIFrameElement;
+                const iframe = container.querySelector(".hs-form-iframe") as HTMLIFrameElement;
                 if (iframe && iframe.contentDocument) {
                   removeStrayTextNodes(iframe.contentDocument.body);
                   removeOrphanedLabels(iframe.contentDocument.body);
-                  
-                  const iframeStyle = iframe.contentDocument.createElement('style');
+
+                  const iframeStyle = iframe.contentDocument.createElement("style");
                   iframeStyle.textContent = `
                     label:not([for]):empty,
                     label[for=""]:empty,
@@ -257,43 +255,47 @@ export const HubSpotContactForm = ({ onFormReady, onFormSubmit, className = "" }
               if (formRef.current) {
                 cleanupObserver.observe(formRef.current, {
                   childList: true,
-                  subtree: true
+                  subtree: true,
                 });
               }
             }, 100);
           },
           onFormSubmit: () => {
             trackEvent({
-              action: 'contact_submit',
-              category: 'conversion',
-              label: 'contact_form',
+              action: "contact_submit",
+              category: "conversion",
+              label: "contact_form",
             });
 
             if ((window as any).dataLayer) {
               (window as any).dataLayer.push({
-                event: 'hs_contact_form_submit',
-                formId: '72916fb5-56f1-4665-a3ad-d132bdd3c45b',
-                form_type: 'contact',
-                conversion_step: 'form_submit'
+                event: "hs_contact_form_submit",
+                formId: "72916fb5-56f1-4665-a3ad-d132bdd3c45b",
+                form_type: "contact",
+                conversion_step: "form_submit",
               });
             }
 
             onFormSubmit?.();
-          }
+          },
         });
 
         detach = attachHSListener(HS_FORM_ID, (eventName, payload) => {
           console.log(`[EF TRACK] HubSpotContactForm ${eventName} (bridge)`, payload);
-          if (eventName === 'onFormSubmitted') {
+          if (eventName === "onFormSubmitted") {
             (window as any).dataLayer = (window as any).dataLayer || [];
-            (window as any).dataLayer.push({ event: 'hs_contact_form_submitted', formId: HS_FORM_ID, form_type: 'contact' });
+            (window as any).dataLayer.push({
+              event: "hs_contact_form_submitted",
+              formId: HS_FORM_ID,
+              form_type: "contact",
+            });
             onFormSubmit?.();
           }
         });
 
         setupObserver();
       } catch (e) {
-        console.error('HubSpot create failed', e);
+        console.error("HubSpot create failed", e);
         initializedRef.current = false;
         if (mounted) setHasError(true);
       }
@@ -309,32 +311,32 @@ export const HubSpotContactForm = ({ onFormReady, onFormSubmit, className = "" }
       const existing = document.querySelector('script[src*="js.hsforms.net/forms/v2.js"]') as HTMLScriptElement | null;
       if (existing) {
         const onLoad = () => initForm();
-        existing.addEventListener('load', onLoad);
-        cleanupFns.push(() => existing.removeEventListener('load', onLoad));
+        existing.addEventListener("load", onLoad);
+        cleanupFns.push(() => existing.removeEventListener("load", onLoad));
       } else {
         // Fallback: load script if missing
-        const script = document.createElement('script');
-        script.src = 'https://js.hsforms.net/forms/v2.js';
+        const script = document.createElement("script");
+        script.src = "https://js.hsforms.net/forms/v2.js";
         script.defer = true;
         script.async = true;
-        script.crossOrigin = 'anonymous';
+        script.crossOrigin = "anonymous";
         const onLoad = () => initForm();
-        script.addEventListener('load', onLoad);
+        script.addEventListener("load", onLoad);
         script.onerror = () => {
           if (!mounted) return;
-          console.warn('[HubSpot] script failed, retrying with cache-bust');
-          const retry = document.createElement('script');
-          retry.src = 'https://js.hsforms.net/forms/v2.js?v=' + Date.now();
+          console.warn("[HubSpot] script failed, retrying with cache-bust");
+          const retry = document.createElement("script");
+          retry.src = "https://js.hsforms.net/forms/v2.js?v=" + Date.now();
           retry.defer = true;
           retry.async = true;
-          retry.crossOrigin = 'anonymous';
-          retry.addEventListener('load', onLoad);
-          retry.onerror = () => console.error('[HubSpot] retry failed');
+          retry.crossOrigin = "anonymous";
+          retry.addEventListener("load", onLoad);
+          retry.onerror = () => console.error("[HubSpot] retry failed");
           document.head.appendChild(retry);
-          cleanupFns.push(() => retry.removeEventListener('load', onLoad));
+          cleanupFns.push(() => retry.removeEventListener("load", onLoad));
         };
         document.head.appendChild(script);
-        cleanupFns.push(() => script.removeEventListener('load', onLoad));
+        cleanupFns.push(() => script.removeEventListener("load", onLoad));
       }
 
       // Quick retry loop in case hbspt appears after load
@@ -358,16 +360,15 @@ export const HubSpotContactForm = ({ onFormReady, onFormSubmit, className = "" }
     }, 15000);
     cleanupFns.push(() => window.clearTimeout(failTimeout));
 
-
     ensureScript();
 
     return () => {
       mounted = false;
-      if (detach) detach(); 
+      if (detach) detach();
       cleanupFns.forEach((fn) => fn());
       observerRef.current?.disconnect();
       if (formRef.current) {
-        formRef.current.innerHTML = '';
+        formRef.current.innerHTML = "";
       }
     };
   }, [onFormReady, onFormSubmit, trackEvent]);
@@ -376,9 +377,7 @@ export const HubSpotContactForm = ({ onFormReady, onFormSubmit, className = "" }
     return (
       <div className="text-center py-8">
         <h3 className="text-2xl font-semibold mb-3 text-primary">Thank You!</h3>
-        <p className="text-muted-foreground mb-6">
-          We received your message and will reply within 24 hours.
-        </p>
+        <p className="text-muted-foreground mb-6">We received your message and will reply within 24 hours.</p>
         <Button onClick={() => setSent(false)} variant="outline">
           Send Another Message
         </Button>
@@ -402,7 +401,7 @@ export const HubSpotContactForm = ({ onFormReady, onFormSubmit, className = "" }
           </div>
         </div>
       )}
-      
+
       {hasError && (
         <div className="text-center py-8">
           <p className="text-destructive mb-4">Unable to load contact form.</p>
@@ -411,12 +410,12 @@ export const HubSpotContactForm = ({ onFormReady, onFormSubmit, className = "" }
           </Button>
         </div>
       )}
-      
-      <div 
+
+      <div
         ref={formRef}
-        style={{ 
-          minHeight: !isLoaded ? '400px' : 'auto',
-          display: hasError ? 'none' : 'block'
+        style={{
+          minHeight: !isLoaded ? "400px" : "auto",
+          display: hasError ? "none" : "block",
         }}
       />
     </div>

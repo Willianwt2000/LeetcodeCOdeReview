@@ -17,8 +17,8 @@ import { ENV } from "@/lib/env";
 const Contact = () => {
   const [open, setOpen] = useState(false);
   const { t } = useTranslation();
-
-
+  
+  
   useEffect(() => {
     const url = ENV.ICON_SCRIPT_URL;
     if (url) {
@@ -27,22 +27,22 @@ const Contact = () => {
         .catch(() => { /* fallback link remains visible */ });
     }
   }, []);
-
+  
   return (
     <main className="min-h-screen bg-background text-foreground">
       <SiteHeader />
       <Helmet>
-        <title>{t('meta.contact.title')}</title>
-        <meta name="description" content={t('meta.contact.description')} />
+        <title>Contact WispFi | Apply for Equipment Financing | Speak to a Funding Expert</title>
+        <meta name="description" content="Contact WispFi for equipment financing, wireless ISP funding, and business loans. Speak to a funding expert today. Apply for financing now." />
         <meta name="keywords" content="contact Wispfi, apply for equipment financing, speak to a funding expert, wireless ISP funding, business loans" />
         <link rel="canonical" href={canonical("/contact")} />
-
+        
         {/* OpenGraph Tags */}
-        <meta property="og:title" content={t('meta.contact.title')} />
-        <meta property="og:description" content={t('meta.contact.description')} />
+        <meta property="og:title" content="Contact WispFi | Apply for Equipment Financing | Speak to a Funding Expert" />
+        <meta property="og:description" content="Contact WispFi for equipment financing, wireless ISP funding, and business loans. Speak to a funding expert today. Apply for financing now." />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/og/wispfi-default.jpg" />
-
+        
         {/* Twitter Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content="/og/wispfi-default.jpg" />
@@ -50,7 +50,7 @@ const Contact = () => {
 
       {/* Hero Section */}
       <section className="relative py-24 bg-gradient-to-br from-primary/10 via-primary/5 to-accent/10 overflow-hidden">
-        <div
+        <div 
           className="absolute inset-0 bg-cover bg-center opacity-15"
           style={{ backgroundImage: `url(${friendlyTeamImage})` }}
         />
@@ -116,7 +116,7 @@ const Contact = () => {
                 </div>
               </div>
             </div>
-
+            
             <div className="relative" id="contact-form">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 rounded-2xl blur-sm"></div>
               <div className="relative bg-card/90 backdrop-blur-sm border border-primary/10 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300">
@@ -286,8 +286,8 @@ const Contact = () => {
                 <Button variant="outline" asChild className="flex-1">
                   <a href="/#faq">{t('contact.faqTeaser.browseFaqs')}</a>
                 </Button>
-                <Button
-                  variant="secondary"
+                <Button 
+                  variant="secondary" 
                   className="flex-1"
                   onClick={() => {
                     toast({

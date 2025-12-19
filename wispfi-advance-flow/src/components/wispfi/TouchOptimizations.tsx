@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
 
 export const TouchOptimizations: React.FC = () => {
   useEffect(() => {
     // Add global touch optimization styles
     const addTouchStyles = () => {
-      const styleElement = document.createElement('style');
+      const styleElement = document.createElement("style");
       styleElement.textContent = `
         /* Enhanced touch interactions */
         .touch-action-manipulation { touch-action: manipulation; }
@@ -89,8 +89,8 @@ export const TouchOptimizations: React.FC = () => {
     const optimizeTouchEvents = () => {
       // Add passive event listeners for better scroll performance
       const addPassiveListeners = () => {
-        const events = ['touchstart', 'touchmove', 'wheel'];
-        events.forEach(event => {
+        const events = ["touchstart", "touchmove", "wheel"];
+        events.forEach((event) => {
           document.addEventListener(event, () => {}, { passive: true });
         });
       };
@@ -98,21 +98,29 @@ export const TouchOptimizations: React.FC = () => {
       // Add touch feedback to interactive elements
       const addTouchFeedback = () => {
         const interactiveElements = document.querySelectorAll(
-          'button, [role="button"], input[type="submit"], .touch-feedback'
+          'button, [role="button"], input[type="submit"], .touch-feedback',
         );
-        
-        interactiveElements.forEach(element => {
-          element.classList.add('touch-action-manipulation');
-          
-          element.addEventListener('touchstart', () => {
-            element.classList.add('touching');
-          }, { passive: true });
-          
-          element.addEventListener('touchend', () => {
-            setTimeout(() => {
-              element.classList.remove('touching');
-            }, 150);
-          }, { passive: true });
+
+        interactiveElements.forEach((element) => {
+          element.classList.add("touch-action-manipulation");
+
+          element.addEventListener(
+            "touchstart",
+            () => {
+              element.classList.add("touching");
+            },
+            { passive: true },
+          );
+
+          element.addEventListener(
+            "touchend",
+            () => {
+              setTimeout(() => {
+                element.classList.remove("touching");
+              }, 150);
+            },
+            { passive: true },
+          );
         });
       };
 
@@ -123,7 +131,7 @@ export const TouchOptimizations: React.FC = () => {
     // Handle safe area insets for iPhone X+ devices
     const handleSafeAreaInsets = () => {
       const addSafeAreaStyles = () => {
-        const style = document.createElement('style');
+        const style = document.createElement("style");
         style.textContent = `
           /* Safe area insets for modern phones */
           .safe-area-inset-top { padding-top: env(safe-area-inset-top); }
@@ -142,7 +150,7 @@ export const TouchOptimizations: React.FC = () => {
         `;
         document.head.appendChild(style);
       };
-      
+
       addSafeAreaStyles();
     };
 

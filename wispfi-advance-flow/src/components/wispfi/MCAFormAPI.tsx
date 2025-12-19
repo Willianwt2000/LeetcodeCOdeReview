@@ -169,7 +169,7 @@ function toHsFields(s: State) {
 
 export default function MCAFormAPI() {
   const { t, i18n } = useTranslation();
-  const currentFormId = i18n.language === 'es' ? FORM_IDS.mca.es : FORM_IDS.mca.en;
+  const currentFormId = i18n.language === "es" ? FORM_IDS.mca.es : FORM_IDS.mca.en;
   const submitUrl = `https://api.hsforms.com/submissions/v3/integration/submit/${PORTAL_ID}/${currentFormId}`;
   const [form, setForm] = useState<State>(initial);
   const [currentStep, setCurrentStep] = useState(1);
@@ -304,7 +304,7 @@ export default function MCAFormAPI() {
 
       navigate("/thank-you", { replace: true });
     } catch (e: any) {
-      setErr(e?.message ?? t('components.mcaForm.errors.submit'));
+      setErr(e?.message ?? t("components.mcaForm.errors.submit"));
     } finally {
       setLoading(false);
     }
@@ -333,8 +333,9 @@ export default function MCAFormAPI() {
         {[1, 2].map((step) => (
           <div key={step} className="flex items-center">
             <div
-              className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${step <= currentStep ? "bg-orange-500 text-white" : "bg-muted text-muted-foreground"
-                }`}
+              className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${
+                step <= currentStep ? "bg-orange-500 text-white" : "bg-muted text-muted-foreground"
+              }`}
             >
               {step}
             </div>
@@ -352,16 +353,16 @@ export default function MCAFormAPI() {
       {/* Step 1: Business Information */}
       {currentStep === 1 && (
         <div className="space-y-4">
-          <h3 className="text-lg font-semibold text-center mb-4">{t('components.mcaForm.steps.basicInfo')}</h3>
+          <h3 className="text-lg font-semibold text-center mb-4">{t("components.mcaForm.steps.basicInfo")}</h3>
 
           <div>
             <LabelWithAsterisk htmlFor="business_name" required>
-              {t('components.mcaForm.labels.businessName')}
+              {t("components.mcaForm.labels.businessName")}
             </LabelWithAsterisk>
             <Input
               id="business_name"
               type="text"
-              placeholder={t('components.mcaForm.placeholders.businessName')}
+              placeholder={t("components.mcaForm.placeholders.businessName")}
               value={form.business_name}
               onChange={onChange("business_name")}
               className={
@@ -373,11 +374,12 @@ export default function MCAFormAPI() {
 
           <div>
             <LabelWithAsterisk htmlFor="time_in_business" required>
-              {t('components.mcaForm.labels.timeInBusiness')} <span className="font-bold text-red-600">{t('components.mcaForm.labels.timeInBusinessHint')}</span>
+              {t("components.mcaForm.labels.timeInBusiness")}{" "}
+              <span className="font-bold text-red-600">{t("components.mcaForm.labels.timeInBusinessHint")}</span>
             </LabelWithAsterisk>
             <Select value={form.time_in_business} onValueChange={onSelectChange("time_in_business")}>
               <SelectTrigger>
-                <SelectValue placeholder={t('components.mcaForm.placeholders.timeInBusiness')} />
+                <SelectValue placeholder={t("components.mcaForm.placeholders.timeInBusiness")} />
               </SelectTrigger>
               <SelectContent className="bg-background border border-border shadow-lg z-50">
                 {TIME_IN_BUSINESS.map((time) => (
@@ -392,12 +394,12 @@ export default function MCAFormAPI() {
           <div className="grid grid-cols-2 gap-4">
             <div>
               <LabelWithAsterisk htmlFor="first_name" required>
-                {t('components.mcaForm.labels.firstName')}
+                {t("components.mcaForm.labels.firstName")}
               </LabelWithAsterisk>
               <Input
                 id="first_name"
                 type="text"
-                placeholder={t('components.mcaForm.placeholders.firstName')}
+                placeholder={t("components.mcaForm.placeholders.firstName")}
                 value={form.first_name}
                 onChange={onChange("first_name")}
                 className={
@@ -408,12 +410,12 @@ export default function MCAFormAPI() {
             </div>
             <div>
               <LabelWithAsterisk htmlFor="last_name" required>
-                {t('components.mcaForm.labels.lastName')}
+                {t("components.mcaForm.labels.lastName")}
               </LabelWithAsterisk>
               <Input
                 id="last_name"
                 type="text"
-                placeholder={t('components.mcaForm.placeholders.lastName')}
+                placeholder={t("components.mcaForm.placeholders.lastName")}
                 value={form.last_name}
                 onChange={onChange("last_name")}
                 className={!form.last_name.trim() && form.last_name !== initial.last_name ? "border-destructive" : ""}
@@ -424,37 +426,37 @@ export default function MCAFormAPI() {
 
           <div>
             <LabelWithAsterisk htmlFor="email" required>
-              {t('components.mcaForm.labels.email')}
+              {t("components.mcaForm.labels.email")}
             </LabelWithAsterisk>
             <Input
               id="email"
               type="email"
-              placeholder={t('components.mcaForm.placeholders.email')}
+              placeholder={t("components.mcaForm.placeholders.email")}
               value={form.email}
               onChange={onChange("email")}
               className={form.email && !isValidEmail(form.email) ? "border-destructive" : ""}
               required
             />
             {form.email && !isValidEmail(form.email) && (
-              <p className="text-sm text-destructive mt-1">{t('components.mcaForm.errors.email')}</p>
+              <p className="text-sm text-destructive mt-1">{t("components.mcaForm.errors.email")}</p>
             )}
           </div>
 
           <div>
             <LabelWithAsterisk htmlFor="phone" required>
-              {t('components.mcaForm.labels.phone')}
+              {t("components.mcaForm.labels.phone")}
             </LabelWithAsterisk>
             <Input
               id="phone"
               type="tel"
-              placeholder={t('components.mcaForm.placeholders.phone')}
+              placeholder={t("components.mcaForm.placeholders.phone")}
               value={form.phone}
               onChange={onChange("phone")}
               className={form.phone && !isValidPhone(form.phone) ? "border-destructive" : ""}
               required
             />
             {form.phone && !isValidPhone(form.phone) && (
-              <p className="text-sm text-destructive mt-1">{t('components.mcaForm.errors.phone')}</p>
+              <p className="text-sm text-destructive mt-1">{t("components.mcaForm.errors.phone")}</p>
             )}
           </div>
 
@@ -463,7 +465,7 @@ export default function MCAFormAPI() {
             disabled={!isStep1Valid}
             className="bg-orange-500 hover:bg-orange-600 text-white px-8 w-full"
           >
-            {t('components.mcaForm.buttons.next')}
+            {t("components.mcaForm.buttons.next")}
           </Button>
         </div>
       )}
@@ -471,15 +473,15 @@ export default function MCAFormAPI() {
       {/* Step 2: Business Details */}
       {currentStep === 2 && (
         <div className="space-y-4">
-          <h3 className="text-lg font-semibold text-center mb-4">{t('components.mcaForm.steps.businessDetails')}</h3>
+          <h3 className="text-lg font-semibold text-center mb-4">{t("components.mcaForm.steps.businessDetails")}</h3>
 
           <div>
             <LabelWithAsterisk htmlFor="industry" required>
-              {t('components.mcaForm.labels.industry')}
+              {t("components.mcaForm.labels.industry")}
             </LabelWithAsterisk>
             <Select value={form.industry} onValueChange={onSelectChange("industry")}>
               <SelectTrigger>
-                <SelectValue placeholder={t('components.mcaForm.placeholders.industry')} />
+                <SelectValue placeholder={t("components.mcaForm.placeholders.industry")} />
               </SelectTrigger>
               <SelectContent className="bg-background border border-border shadow-lg z-50">
                 {INDUSTRIES.map((industry) => (
@@ -493,11 +495,11 @@ export default function MCAFormAPI() {
 
           <div>
             <LabelWithAsterisk htmlFor="state_region" required>
-              {t('components.mcaForm.labels.state')}
+              {t("components.mcaForm.labels.state")}
             </LabelWithAsterisk>
             <Select value={form.state_region} onValueChange={onSelectChange("state_region")}>
               <SelectTrigger>
-                <SelectValue placeholder={t('components.mcaForm.placeholders.state')} />
+                <SelectValue placeholder={t("components.mcaForm.placeholders.state")} />
               </SelectTrigger>
               <SelectContent className="bg-background border border-border shadow-lg z-50">
                 {US_STATES.map((state) => (
@@ -511,11 +513,11 @@ export default function MCAFormAPI() {
 
           <div>
             <LabelWithAsterisk htmlFor="monthly_revenue" required>
-              {t('components.mcaForm.labels.monthlyRevenue')}
+              {t("components.mcaForm.labels.monthlyRevenue")}
             </LabelWithAsterisk>
             <Select value={form.monthly_revenue} onValueChange={onSelectChange("monthly_revenue")}>
               <SelectTrigger>
-                <SelectValue placeholder={t('components.mcaForm.placeholders.monthlyRevenue')} />
+                <SelectValue placeholder={t("components.mcaForm.placeholders.monthlyRevenue")} />
               </SelectTrigger>
               <SelectContent className="bg-background border border-border shadow-lg z-50">
                 {MONTHLY_REVENUE.map((revenue) => (
@@ -530,9 +532,7 @@ export default function MCAFormAPI() {
           {/* Privacy Consent Section */}
           <div className="space-y-4 pt-4 border-t border-border">
             <div className="text-sm text-muted-foreground leading-relaxed">
-              <p className="mb-3">
-                {t('components.contactForm.privacy.text')}
-              </p>
+              <p className="mb-3">{t("components.contactForm.privacy.text")}</p>
             </div>
 
             <div className="flex items-start space-x-3">
@@ -544,14 +544,12 @@ export default function MCAFormAPI() {
               />
               <div className="flex-1">
                 <LabelWithAsterisk htmlFor="privacy_consent" required className="text-sm font-normal cursor-pointer">
-                  {t('components.contactForm.privacy.checkbox')}
+                  {t("components.contactForm.privacy.checkbox")}
                 </LabelWithAsterisk>
               </div>
             </div>
 
-            <p className="text-sm text-muted-foreground">
-              {t('components.contactForm.privacy.disclaimer')}
-            </p>
+            <p className="text-sm text-muted-foreground">{t("components.contactForm.privacy.disclaimer")}</p>
           </div>
 
           {/* reCAPTCHA v2 */}
@@ -559,14 +557,14 @@ export default function MCAFormAPI() {
 
           <div className="flex gap-3">
             <Button onClick={prevStep} variant="outline" className="flex-1 px-8">
-              {t('components.mcaForm.buttons.back')}
+              {t("components.mcaForm.buttons.back")}
             </Button>
             <Button
               onClick={onSubmit}
               disabled={!isStep2Valid || loading}
               className="bg-orange-500 hover:bg-orange-600 text-white px-8 flex-1"
             >
-              {loading ? t('components.mcaForm.buttons.submitting') : t('components.mcaForm.buttons.submit')}
+              {loading ? t("components.mcaForm.buttons.submitting") : t("components.mcaForm.buttons.submit")}
             </Button>
           </div>
         </div>
@@ -582,9 +580,9 @@ export default function MCAFormAPI() {
               clipRule="evenodd"
             />
           </svg>
-          {t('components.mcaForm.trust.secure')}
+          {t("components.mcaForm.trust.secure")}
         </div>
-        <div className="text-xs text-muted-foreground mt-1">{t('components.mcaForm.trust.noImpact')}</div>
+        <div className="text-xs text-muted-foreground mt-1">{t("components.mcaForm.trust.noImpact")}</div>
       </div>
     </div>
   );

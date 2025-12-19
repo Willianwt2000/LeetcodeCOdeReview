@@ -295,5 +295,23 @@
         } catch(e){}
       })();
     </script>
+<script>
+  (() => {
+    const onViewportChange = () => {
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+
+      console.log("Viewport width:", width + "px");
+      console.log("Viewport height:", height + "px");
+    };
+
+    // Ejecutar al cargar
+    onViewportChange();
+
+    // Callback en resize
+    window.addEventListener("resize", onViewportChange);
+  })();
+</script>
+
   </body>
 </html>

@@ -5,7 +5,26 @@ import { canonical } from "@/lib/seo";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
-import { CheckCircle2, Clock, Shield, BadgeCheck, FileText, Banknote, Zap, Users, Star, Award, TrendingUp, Hammer, Truck, Network, UtensilsCrossed, Wrench, Computer, CreditCard } from "lucide-react";
+import {
+  CheckCircle2,
+  Clock,
+  Shield,
+  BadgeCheck,
+  FileText,
+  Banknote,
+  Zap,
+  Users,
+  Star,
+  Award,
+  TrendingUp,
+  Hammer,
+  Truck,
+  Network,
+  UtensilsCrossed,
+  Wrench,
+  Computer,
+  CreditCard,
+} from "lucide-react";
 import SiteHeader from "@/components/wispfi/SiteHeader";
 import SiteFooter from "@/components/wispfi/SiteFooter";
 import { TestimonialCarousel } from "@/components/wispfi/TestimonialCarousel";
@@ -34,8 +53,8 @@ import medicalDental from "@/assets/industries/medical-dental.webp";
 import manufacturing from "@/assets/industries/manufacturing.webp";
 import officeIT from "@/assets/industries/office-it.webp";
 import posPayments from "@/assets/industries/pos-payments.webp";
-import warmMeetingRoom from '@/assets/backgrounds/warm-meeting-room.jpg';
-import warmOfficeSpace from '@/assets/backgrounds/warm-office-space.jpg';
+import warmMeetingRoom from "@/assets/backgrounds/warm-meeting-room.jpg";
+import warmOfficeSpace from "@/assets/backgrounds/warm-office-space.jpg";
 
 const scrollToForm = () => {
   const el = document.getElementById("ef-form");
@@ -52,9 +71,9 @@ const EquipmentFinancing = () => {
     // GTM tracking for Equipment conversion
     if (window.dataLayer) {
       window.dataLayer.push({
-        event: 'lead_equipment',
+        event: "lead_equipment",
         page_url: window.location.href,
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
       });
     }
   };
@@ -64,15 +83,27 @@ const EquipmentFinancing = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Helmet>
-        <title>{t('meta.equipmentFinancing.title')}</title>
-        <meta name="description" content={t('meta.equipmentFinancing.description')} />
-        <meta name="keywords" content="equipment financing, equipment leasing, truck financing, construction equipment loans, restaurant equipment financing, WISP equipment funding" />
+        <title>Equipment Financing & Leasing — New & Used | Fast, Flexible Options | WispFi</title>
+        <meta
+          name="description"
+          content="Finance new or used equipment fast. Trucks, construction, WISP, restaurant gear. Preserve cash flow with flexible payments. Subject to approval."
+        />
+        <meta
+          name="keywords"
+          content="equipment financing, equipment leasing, truck financing, construction equipment loans, restaurant equipment financing, WISP equipment funding"
+        />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={canonical("/equipment-financing")} />
 
         {/* OpenGraph Tags */}
-        <meta property="og:title" content={t('meta.equipmentFinancing.title')} />
-        <meta property="og:description" content={t('meta.equipmentFinancing.description')} />
+        <meta
+          property="og:title"
+          content="Equipment Financing & Leasing — New & Used | Fast, Flexible Options | WispFi"
+        />
+        <meta
+          property="og:description"
+          content="Finance new or used equipment fast. Trucks, construction, WISP, restaurant gear. Preserve cash flow with flexible payments. Subject to approval."
+        />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/og/wispfi-default.jpg" />
 
@@ -81,66 +112,90 @@ const EquipmentFinancing = () => {
         <meta name="twitter:image" content="/og/wispfi-default.jpg" />
 
         {/* Service Schema */}
-        <script type="application/ld+json">{JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Service",
-          "name": "Equipment Financing",
-          "provider": {
-            "@type": "Organization",
-            "name": "WispFi"
-          },
-          "areaServed": "US",
-          "serviceType": "Equipment Financing and Leasing"
-        })}</script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: "Equipment Financing",
+            provider: {
+              "@type": "Organization",
+              name: "WispFi",
+            },
+            areaServed: "US",
+            serviceType: "Equipment Financing and Leasing",
+          })}
+        </script>
 
         {/* FAQ Schema */}
-        <script type="application/ld+json">{JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "Do you finance used equipment?",
-              "acceptedAnswer": { "@type": "Answer", "text": "Yes, used equipment may be eligible depending on condition and underwriting." }
-            },
-            {
-              "@type": "Question",
-              "name": "Dealer vs private party purchases?",
-              "acceptedAnswer": { "@type": "Answer", "text": "We consider both dealer and private-party transactions; private-party may require extra verification." }
-            },
-            {
-              "@type": "Question",
-              "name": "What terms are available?",
-              "acceptedAnswer": { "@type": "Answer", "text": "Terms vary by asset type, age, and applicant profile. Underwriting determines specifics." }
-            },
-            {
-              "@type": "Question",
-              "name": "Is a down payment required?",
-              "acceptedAnswer": { "@type": "Answer", "text": "Not always; requirements depend on equipment and profile." }
-            },
-            {
-              "@type": "Question",
-              "name": "What collateral is used?",
-              "acceptedAnswer": { "@type": "Answer", "text": "Usually the equipment itself serves as collateral." }
-            },
-            {
-              "@type": "Question",
-              "name": "How fast can funding close?",
-              "acceptedAnswer": { "@type": "Answer", "text": "Funding can close in as little as 24–48 hours with complete documents, subject to approval." }
-            },
-            {
-              "@type": "Question",
-              "name": "Will applying affect my credit?",
-              "acceptedAnswer": { "@type": "Answer", "text": "An initial review may use a soft pull; final approval may require a hard pull." }
-            },
-            {
-              "@type": "Question",
-              "name": "Can I deduct equipment purchases?",
-              "acceptedAnswer": { "@type": "Answer", "text": "Tax advantages may be available. Consult a qualified tax advisor for specific deductions." }
-            }
-          ]
-        })}</script>
-
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "Do you finance used equipment?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Yes, used equipment may be eligible depending on condition and underwriting.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Dealer vs private party purchases?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "We consider both dealer and private-party transactions; private-party may require extra verification.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "What terms are available?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Terms vary by asset type, age, and applicant profile. Underwriting determines specifics.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Is a down payment required?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Not always; requirements depend on equipment and profile.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "What collateral is used?",
+                acceptedAnswer: { "@type": "Answer", text: "Usually the equipment itself serves as collateral." },
+              },
+              {
+                "@type": "Question",
+                name: "How fast can funding close?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Funding can close in as little as 24–48 hours with complete documents, subject to approval.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Will applying affect my credit?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "An initial review may use a soft pull; final approval may require a hard pull.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Can I deduct equipment purchases?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Tax advantages may be available. Consult a qualified tax advisor for specific deductions.",
+                },
+              },
+            ],
+          })}
+        </script>
       </Helmet>
 
       <SiteHeader />
@@ -148,7 +203,6 @@ const EquipmentFinancing = () => {
       <main>
         {/* Hero Section - New Layout */}
         <EFHeroNew onFormSubmit={handleFormSubmit} />
-
 
         {/* Qualification Criteria */}
         <QualificationCriteria />
@@ -161,7 +215,6 @@ const EquipmentFinancing = () => {
 
         {/* Equipment Financing Calculator */}
         <EquipmentFinancingCalculator onOpenModal={() => setIsPrequalModalOpen(true)} />
-
 
         {/* Value Strip */}
         <section className="py-16 bg-muted/30">
@@ -203,43 +256,43 @@ const EquipmentFinancing = () => {
                 {
                   titleKey: "equipmentFinancing.whatWeFinance.construction.title",
                   descKey: "equipmentFinancing.whatWeFinance.construction.desc",
-                  image: constructionMachinery
+                  image: constructionMachinery,
                 },
                 {
                   titleKey: "equipmentFinancing.whatWeFinance.trucks.title",
                   descKey: "equipmentFinancing.whatWeFinance.trucks.desc",
-                  image: trucksTransportation
+                  image: trucksTransportation,
                 },
                 {
                   titleKey: "equipmentFinancing.whatWeFinance.telecom.title",
                   descKey: "equipmentFinancing.whatWeFinance.telecom.desc",
-                  image: telecomBroadband
+                  image: telecomBroadband,
                 },
                 {
                   titleKey: "equipmentFinancing.whatWeFinance.restaurants.title",
                   descKey: "equipmentFinancing.whatWeFinance.restaurants.desc",
-                  image: restaurantsFoodservice
+                  image: restaurantsFoodservice,
                 },
                 {
                   titleKey: "equipmentFinancing.whatWeFinance.medical.title",
                   descKey: "equipmentFinancing.whatWeFinance.medical.desc",
-                  image: medicalDental
+                  image: medicalDental,
                 },
                 {
                   titleKey: "equipmentFinancing.whatWeFinance.manufacturing.title",
                   descKey: "equipmentFinancing.whatWeFinance.manufacturing.desc",
-                  image: manufacturing
+                  image: manufacturing,
                 },
                 {
                   titleKey: "equipmentFinancing.whatWeFinance.office.title",
                   descKey: "equipmentFinancing.whatWeFinance.office.desc",
-                  image: officeIT
+                  image: officeIT,
                 },
                 {
                   titleKey: "equipmentFinancing.whatWeFinance.pos.title",
                   descKey: "equipmentFinancing.whatWeFinance.pos.desc",
-                  image: posPayments
-                }
+                  image: posPayments,
+                },
               ].map((item) => (
                 <Card key={item.titleKey} className="overflow-hidden group hover:shadow-xl transition-all duration-300">
                   <div className="aspect-[3/2] relative">
@@ -254,7 +307,7 @@ const EquipmentFinancing = () => {
                     />
                     <div className="absolute inset-0 bg-black/15 group-hover:bg-black/20 transition-colors" />
                     <div className="absolute bottom-4 left-4 right-4 text-white">
-                      <h3 className="text-lg font-semibold mb-1">{t(item.titleKey)}</h3>
+                      <h3 className="text-lg font-semibold mb-1 text-white">{t(item.titleKey)}</h3>
                       <p className="text-sm opacity-90">{t(item.descKey)}</p>
                     </div>
                   </div>
@@ -263,9 +316,7 @@ const EquipmentFinancing = () => {
             </div>
 
             <div className="text-center mt-8">
-              <p className="text-muted-foreground mb-6">
-                {t("equipmentFinancing.whatWeFinance.cantFind")}
-              </p>
+              <p className="text-muted-foreground mb-6">{t("equipmentFinancing.whatWeFinance.cantFind")}</p>
             </div>
           </div>
         </section>
@@ -349,7 +400,9 @@ const EquipmentFinancing = () => {
                   <CardTitle className="text-lg">{t("equipmentFinancing.industries.construction.title")}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-muted-foreground mb-4">{t("equipmentFinancing.industries.construction.desc")}</p>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    {t("equipmentFinancing.industries.construction.desc")}
+                  </p>
                   <div className="text-xs text-muted-foreground">
                     <p className="font-medium mb-1">{t("equipmentFinancing.industries.construction.assets")}</p>
                     <ul className="space-y-1">
@@ -367,7 +420,9 @@ const EquipmentFinancing = () => {
                   <CardTitle className="text-lg">{t("equipmentFinancing.industries.trucking.title")}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-muted-foreground mb-4">{t("equipmentFinancing.industries.trucking.desc")}</p>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    {t("equipmentFinancing.industries.trucking.desc")}
+                  </p>
                   <div className="text-xs text-muted-foreground">
                     <p className="font-medium mb-1">{t("equipmentFinancing.industries.trucking.assets")}</p>
                     <ul className="space-y-1">
@@ -385,7 +440,9 @@ const EquipmentFinancing = () => {
                   <CardTitle className="text-lg">{t("equipmentFinancing.industries.telecom.title")}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-muted-foreground mb-4">{t("equipmentFinancing.industries.telecom.desc")}</p>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    {t("equipmentFinancing.industries.telecom.desc")}
+                  </p>
                   <div className="text-xs text-muted-foreground">
                     <p className="font-medium mb-1">{t("equipmentFinancing.industries.telecom.assets")}</p>
                     <ul className="space-y-1">
@@ -403,7 +460,9 @@ const EquipmentFinancing = () => {
                   <CardTitle className="text-lg">{t("equipmentFinancing.industries.restaurants.title")}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-muted-foreground mb-4">{t("equipmentFinancing.industries.restaurants.desc")}</p>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    {t("equipmentFinancing.industries.restaurants.desc")}
+                  </p>
                   <div className="text-xs text-muted-foreground">
                     <p className="font-medium mb-1">{t("equipmentFinancing.industries.restaurants.assets")}</p>
                     <ul className="space-y-1">
@@ -426,9 +485,7 @@ const EquipmentFinancing = () => {
         {/* Compliance Footer */}
         <section className="py-8 bg-background border-t">
           <div className="container">
-            <p className="text-xs text-muted-foreground text-center">
-              {t("equipmentFinancing.compliance")}
-            </p>
+            <p className="text-xs text-muted-foreground text-center">{t("equipmentFinancing.compliance")}</p>
           </div>
         </section>
       </main>
