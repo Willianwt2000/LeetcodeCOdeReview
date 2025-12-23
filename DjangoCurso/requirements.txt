@@ -1,0 +1,4 @@
+asgiref @ file:///home/conda/feedstock_root/build_artifacts/asgiref_1763585112330/work
+Django @ file:///home/conda/feedstock_root/build_artifacts/django_1764783732931/work
+sqlparse @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_sqlparse_1766143791/work
+typing_extensions @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_typing_extensions_1756220668/work
