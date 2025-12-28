@@ -44,18 +44,20 @@
     </style>
   </head>
   <body>
-    <h1>Today is:</h1>
+    {% include './includes/partial.html' %}
+    <h2>Today is:</h2>
 
     <ul>
       {% for day in days %}
         <li>
-          <a href="{% url 'days_details' day.message %}">
-            {{ day.id }}
+          <a href="{% url 'days_details' day.id %}">
+            {{ day.message }}
           </a>
         </li>
       {% empty %}
         <li>No days found in your calendar week.</li>
       {% endfor %}
     </ul>
+    {% include './includes/endpartial.html' with days=days name='Willian' %}
   </body>
 </html>

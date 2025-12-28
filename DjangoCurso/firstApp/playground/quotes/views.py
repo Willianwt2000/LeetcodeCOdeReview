@@ -1,4 +1,4 @@
-from django.http import HttpResponse, HttpResponseNotFound
+from django.http import HttpResponse, HttpResponseNotFound,Http404
 from django.shortcuts import render
 from django.urls import reverse
 
@@ -35,17 +35,26 @@ months = {
 
 
 def day_quote(request, day):
-    message = days_of_weeks.get(day)
-    if not message:
-        return HttpResponseNotFound("<h1>El día no existe</h1>")
-    return HttpResponse(f"<h1>{message}</h1>")
+    try:
+        message = days_of_weeks[day]  # acceso directo
+        return HttpResponse(f"<h1>{message}</h1>")
+    except KeyError:
+        return render(request, "dayweek/404.html", {
+            "days": days_of_weeks
+        }, status=404 )
 
 
 def month_of_year(request, month):
-    month_year = months.get(month)
-    if not month_year:
-        return HttpResponseNotFound("<h1>El mes no existe</h1>")
-    return HttpResponse(f"<h1>Estamos en el mes {month_year}</h1>")
+    month = month.lower()  # normaliza el parámetro
+
+    try:
+        month_year = months[month]
+        return render(request, "dayweek/yearmonths.html", {
+            "month_name": month_year
+        })
+    except KeyError:
+        return render(request, "dayweek/404.html", status=404)
+
 
 
 def home(request):
