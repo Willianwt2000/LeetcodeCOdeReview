@@ -68,3 +68,23 @@ def home(request):
 def day_details(request, dia_detalles):
     print("✅ Detalles del día accedidos")
     return HttpResponse(f"<h1>{dia_detalles}</h1>")
+
+
+def is_2026(request, anio_detalles):
+    print("✅ Detalles del año 2026")
+    if anio_detalles != "2026":
+        return render(request, "dayweek/404.html", status=404)
+    else:
+        print(anio_detalles)
+        return render(request, "dayweek/2026.html")
+
+
+def prueba(request,prueba):
+    try:
+        if prueba != "boton":
+            print(prueba)
+            return HttpResponse(prueba)
+    except AttributeError:
+        return render(request, "dayweek/prueba.html")
+
+

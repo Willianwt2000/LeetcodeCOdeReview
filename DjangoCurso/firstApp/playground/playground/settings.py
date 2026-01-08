@@ -77,10 +77,15 @@ WSGI_APPLICATION = 'playground.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'course-db',       
+        'USER': 'alumno',          
+        'PASSWORD': '123456',     
+        'HOST': 'localhost',       
+        'PORT': '5432',
     }
 }
+
 
 
 # Password validation
