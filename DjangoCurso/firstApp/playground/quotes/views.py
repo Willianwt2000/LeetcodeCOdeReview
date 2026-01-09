@@ -26,12 +26,7 @@ months = {
     "d": "December"
 }
 
-# def index(request):
-#     list_items = ""
-#     for day in days_of_weeks.keys():
-#         day_path = reverse("day-quote", args=[day])
-#         list_items += f'<li><a href="{day_path}">{day}</a></li>'
-#     return HttpResponse(f"<ul>{list_items}</ul>")
+
 
 
 def day_quote(request, day):
