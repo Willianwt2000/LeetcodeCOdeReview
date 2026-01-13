@@ -88,5 +88,5 @@
 -- ORDER BY table_name;
 
 
-SELECT * FROM public.minilibrary_author;
+-- SELECT * FROM public.minilibrary_author;
 SELECT * FROM public.minilibrary_book;
