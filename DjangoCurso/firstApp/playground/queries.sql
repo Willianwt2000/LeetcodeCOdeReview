@@ -88,5 +88,7 @@
 -- ORDER BY table_name;
 
 
-SELECT * FROM public.minilibrary_author;
-SELECT * FROM public.minilibrary_book;
+-- SELECT * FROM public.minilibrary_author;
+-- SELECT * FROM public.minilibrary_book;
+
+-- SELECT "minilibrary_author"."id", "minilibrary_author"."name", "minilibrary_author"."birth_date" FROM "minilibrary_author"
