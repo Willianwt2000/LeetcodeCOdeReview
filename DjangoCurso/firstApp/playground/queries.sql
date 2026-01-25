@@ -88,7 +88,7 @@
 -- ORDER BY table_name;
 
 
--- SELECT * FROM public.minilibrary_author;
--- SELECT * FROM public.minilibrary_book;
+SELECT * FROM public.minilibrary_author WHERE name LIKE 'Ja%';
+SELECT * FROM public.minilibrary_book WHERE author_id = 208;
 
 -- SELECT "minilibrary_author"."id", "minilibrary_author"."name", "minilibrary_author"."birth_date" FROM "minilibrary_author"
