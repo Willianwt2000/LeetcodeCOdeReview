@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth import get_user_model
 
 # Create your models here.
 class Author(models.Model):
@@ -34,6 +35,19 @@ class BookDetails(models.Model):
     
     def __str__(self):
         return f"Details of {self.book.title}"
+
+class review(models.Model):
+    user_id = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, related_name='reviews')
+    book_id = models.ForeignKey(Book, on_delete=models.CASCADE, related_name='reviews')
+    rating = models.PositiveBigIntegerField()
+    comment = models.TextField()
+    create_at = models.DateTimeField(auto_now_add=True)
+
+def __str__(self):
+        return f"{self.user} ==> {self.book.title} by ({self.rating}/5)"
+
+
+
 
 class Test_table(models.Model):
     id = models.AutoField(primary_key=True)
