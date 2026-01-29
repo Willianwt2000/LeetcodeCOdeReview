@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Day of the week</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f6f8;
+        padding: 40px;
+      }
+
+      h1 {
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        max-width: 400px;
+      }
+
+      li {
+        background: white;
+        margin-bottom: 10px;
+        padding: 12px 16px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      }
+
+      a {
+        text-decoration: none;
+        color: #007bff;
+        font-weight: bold;
+      }
+
+      a:hover {
+        color: #0056b3;
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    {% include './includes/partial.html' %}
+    <h2>Today is:</h2>
+
+    <!-- Remove this style  -->
+    <ul>
+      {% for day in days %}
+        <li>
+          <a href="{% url 'days_details' day.id %}">
+            {{ day.message }}
+          </a>
+        </li>
+      {% empty %}
+        <li>No days found in your calendar week.</li>
+      {% endfor %}
+    </ul>
+    {% include './includes/endpartial.html' with days=days name='Willian' %}
+  </body>
+</html>

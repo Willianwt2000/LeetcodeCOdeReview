@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Prueba</title>
+    <link rel="stylesheet" href="{% static 'quotes/quotes_styles.css' %}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    {% if prueba != true %}
+      <button>Click Me! false</button>
+    {% else %}
+      <h1>Click Me! true</h1>
+    {% endif %}
+  </body>
+</html>

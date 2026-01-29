@@ -1,0 +1,27 @@
+{% load static %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mes</title>
+    <link rel="stylesheet" href="{% static 'quotes/quotes_styles.css' %}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+  </head>
+  <body>
+    {% comment %}imagen{% endcomment %}
+    {% comment %}Div padre para ambos divs{% endcomment %}
+
+    <section class="container-card-father">
+      <div class="image-container">
+        <img src="{% static 'quotes/images/sung-jin.jpg' %}" alt="sung-jin-woo" class="responsive-image" />
+      </div>
+
+      <div class="card">
+        <h1>Mes seleccionado</h1>
+        <h2>{{ month_name }}</h2>
+      </div>
+    </section>
+  </body>
+</html>
