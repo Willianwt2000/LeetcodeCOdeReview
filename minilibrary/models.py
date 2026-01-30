@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth import get_user_model
 
-# Create your models here.
 class Author(models.Model):
     name = models.CharField(max_length=100)
     birth_date = models.DateField(null=True, blank=True)
@@ -11,9 +10,9 @@ class Author(models.Model):
 
 class Genre(models.Model):
     name = models.CharField(max_length=50, unique=True)
+    
     def __str__(self):
         return self.name
-
 
 class Book(models.Model):
     title = models.CharField(max_length=200)
@@ -22,55 +21,53 @@ class Book(models.Model):
     pages = models.IntegerField()
     isbn = models.CharField(max_length=50)
     genres = models.ManyToManyField(Genre, related_name='books')
-
+    recommended_by = models.ManyToManyField(
+        get_user_model(), 
+        through="Recommendation", 
+        related_name="recommended_books"
+    )
 
     def __str__(self):
         return self.title
-    
+
 class BookDetails(models.Model):
     book = models.OneToOneField(Book, on_delete=models.CASCADE, related_name='details')
     summary = models.TextField()
-    cover_url = models.CharField(max_length=200)
+    cover_url = models.URLField(max_length=500)  # Cambié a URLField
     language = models.CharField(max_length=50)
     
     def __str__(self):
         return f"Details of {self.book.title}"
 
-class review(models.Model):
-    user_id = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, related_name='reviews')
-    book_id = models.ForeignKey(Book, on_delete=models.CASCADE, related_name='reviews')
-    rating = models.PositiveBigIntegerField()
+class Review(models.Model):  # ¡Corregido: Review con mayúscula!
+    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, related_name='reviews')
+    book = models.ForeignKey(Book, on_delete=models.CASCADE, related_name='reviews')
+    rating = models.PositiveIntegerField()  # Cambié a PositiveIntegerField
     comment = models.TextField()
-    create_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(auto_now_add=True)  # Corregí 'create_at' a 'created_at'
 
-def __str__(self):
-        return f"{self.user} ==> {self.book.title} by ({self.rating}/5)"
-
-
-
+    def __str__(self):
+        return f"{self.user} ==> {self.book.title} ({self.rating}/5)"
 
 class Loan(models.Model):
     user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
     book = models.ForeignKey(Book, on_delete=models.CASCADE, related_name='loans')
     loan_date = models.DateTimeField(auto_now_add=True)
-    return_date = models.DateTimeField(auto_now_add=True)
+    return_date = models.DateTimeField(null=True, blank=True)
     is_returned = models.BooleanField(default=False)
     
     def __str__(self):
-        return f"{self.user} -> {self.book.title} ({'Devuelto' if self.is_returned else 'Prestado'})"
+        status = 'Devuelto' if self.is_returned else 'Prestado'
+        return f"{self.user} -> {self.book.title} ({status})"
+
+class Recommendation(models.Model):
+    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+    book = models.ForeignKey(Book, on_delete=models.CASCADE)
+    recommended_at = models.DateTimeField(auto_now_add=True)
+    note = models.TextField(blank=True)
     
-
-
-class Test_table(models.Model):
-    id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=100)
-    created_at = models.DateTimeField()
-
     class Meta:
-        managed = False
-        db_table = 'test_table' 
-
+        unique_together = ("user", "book")
+    
     def __str__(self):
-        return self.name
-
-# End of models.py
+        return f"{self.user} recomienda {self.book.title}"
