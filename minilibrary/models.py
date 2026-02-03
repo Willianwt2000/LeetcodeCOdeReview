@@ -49,6 +49,8 @@ class Review(models.Model):  # ¡Corregido: Review con mayúscula!
     def __str__(self):
         return f"{self.user} ==> {self.book.title} ({self.rating}/5)"
 
+# Comment to keep orbit
+
 class Loan(models.Model):
     user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
     book = models.ForeignKey(Book, on_delete=models.CASCADE, related_name='loans')
