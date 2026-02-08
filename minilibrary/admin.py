@@ -7,5 +7,3 @@ admin.site.register(Book)
 admin.site.register(BookDetails)
 admin.site.register(Review)
 admin.site.register(Loan)
-
-
