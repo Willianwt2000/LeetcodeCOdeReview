@@ -6,6 +6,10 @@ from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 
 # Register your models here.
 
+admin.site.site_header = "Adminstración de la Mini Biblioteca"
+admin.site.site_title = "Mini Biblioteca"
+admin.site.index_title = "Panel de Administración"
+
 class ReviewInline(admin.TabularInline):
     model = Review
     extra = 1
@@ -15,6 +19,13 @@ class BookDetailsInline(admin.StackedInline):
     extra = 1
     can_delete = False
     verbose_name_plural = 'Detalles del Libro'
+    
+
+@admin.action(description='Marcar como devuelto')
+def mark_as_returned(modeladmin, request, queryset):
+        for loan in queryset:
+            loan.status = 'returned'
+            loan.save()
 
 class LoanInline(admin.TabularInline):
     model = Loan
@@ -35,6 +46,7 @@ class BookAdmin(admin.ModelAdmin):
     list_filter = ('author', 'genres', 'publication_date')
     ordering = ['-publication_date']
     date_hierarchy = 'publication_date'
+    autocomplete_fields = ['author', 'genres']
 
     fieldsets = (
         ('Información general', {
@@ -45,13 +57,26 @@ class BookAdmin(admin.ModelAdmin):
             'classes': ('collapse',),
         }),
     )
+    
+
+    # crear permisos permitidos para agregar y cambiar libros
+    def has_add_permission(self, request):
+        return request.user.is_superuser
+    
+    def has_change_permission(self, request, obj=None):
+        return request.user.is_staff
 
 @admin.register(Author)
 class AuthorAdmin(admin.ModelAdmin):
+    search_fields = ['name']
     list_display = ('name', 'birth_date', 'country')
     search_fields = ('name',)
     list_filter = ('country',)
     ordering = ['name']
+    
+@admin.register(Genre)
+class GenreAdmin(admin.ModelAdmin):
+    search_fields = ['name']
 
 @admin.register(Review)
 class ReviewAdmin(admin.ModelAdmin):
@@ -73,9 +98,12 @@ class LoanAdmin(admin.ModelAdmin):
     list_display = ('user', 'book', 'loan_date', 'return_date', 'status')
     search_fields = ('book__title', 'user__username')
     list_filter = ('loan_date', 'return_date', 'status')
+    actions = [mark_as_returned]
+    raw_id_fields = ['user', 'book']
     ordering = ['-loan_date']
+    
 
-admin.site.register(Genre)
+# admin.site.register(Genre)
 
 try:
     admin.site.unregister(User)
