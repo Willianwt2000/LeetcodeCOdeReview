@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('messages/', include("quotes.urls")),
     path('landings/', include("landing.urls")),
+    path('minilibrary/', include("minilibrary.urls")),
 
 ]
