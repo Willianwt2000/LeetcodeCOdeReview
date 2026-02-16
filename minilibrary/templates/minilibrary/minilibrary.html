@@ -22,13 +22,22 @@
     </header>
 
     <main>
-        <section>
-            <h2>{{text}}</h2>
-            <p>{{name}}</p>
-        </section>
+        <ul>
+            {% for book in page_obj %}
+                <li>{{ book.title }} - {{ book.author }}</li>
+                {% empty %}
+                <li>No hay libros disponibles.</li>
+            {% endfor %}
+        </ul>
+        <form method="get">
+            <label for="author">Filtrar por autor:</label>
+            <input type="text" id="author" name="query_search" placeholder="Nombre del autor o titulo " value="{{query}}"/>
+            <button type="submit">Enviar</button>
+        </form>
     </main>
 
     <footer>
+        <!-- cantitad de la pagina -->
         <small>{{author}}</small>
     </footer>
 

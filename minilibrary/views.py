@@ -1,13 +1,51 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-# Create your views here.
+from .models import Book
+from django.db.models import Q
+from django.core.paginator import Paginator
+
+
 def index(request):
     try:
-        author_id = request.GET.get('author')
-        return render(request, 'minilibrary/minilibrary.html', 
-                {
-                    'text': 'Bienvenido a la Mini Biblioteca', 'name': 'Usuario', 'author': author_id
-                }
+        # filtrando desde el path con query params
+        books = Book.objects.all()
+        # obteniendo el valor del query param "query_search"
+        query = request.GET.get("query_search")
+
+
+        if query:
+            books = books.filter(
+                Q(title__icontains=query) |
+                Q(author__name__icontains=query) 
             )
+        paginator = Paginator(books, 3)  # 3 libros por página
+        page_number = request.GET.get('page')
+        page_obj = paginator.get_page(page_number)
+
+        # filtrando desde el path con query params
+        # books = Book.objects.all()
+        # author_id = request.GET.get('author')
+        # genre_id = request.GET.get('genre')
+        # print(f"Genre ID: {genre_id}")
+
+        
+
+        # if author_id:
+        #     print(f"Author ID: {author_id}")
+        #     books = books.filter(author__id=author_id)
+
+        # if genre_id:
+        #     print(f"Genre ID: {genre_id}")
+        #     books = books.filter(genre__id=genre_id)
+
+        return render(
+            request,
+            'minilibrary/minilibrary.html',
+            {
+                'page_obj': page_obj,
+                'query': query,
+            }
+        )
+
     except Exception as e:
         return HttpResponse(f"Pagina no encontrada: {str(e)}", status=404)
