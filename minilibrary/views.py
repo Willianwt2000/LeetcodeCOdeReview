@@ -11,14 +11,18 @@ def index(request):
         books = Book.objects.all()
         # obteniendo el valor del query param "query_search"
         query = request.GET.get("query_search")
-
+        date_start = request.GET.get("start")
+        date_end = request.GET.get("end")
 
         if query:
             books = books.filter(
                 Q(title__icontains=query) |
                 Q(author__name__icontains=query) 
             )
-        paginator = Paginator(books, 3)  # 3 libros por página
+
+        if date_start and date_end:
+            books = books.filter(publication_date__range=[date_start, date_end])
+        paginator = Paginator(books, 2)  # 3 libros por página
         page_number = request.GET.get('page')
         page_obj = paginator.get_page(page_number)
 
