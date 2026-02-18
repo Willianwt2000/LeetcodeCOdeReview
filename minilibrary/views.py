@@ -26,22 +26,6 @@ def index(request):
         page_number = request.GET.get('page')
         page_obj = paginator.get_page(page_number)
 
-        # filtrando desde el path con query params
-        # books = Book.objects.all()
-        # author_id = request.GET.get('author')
-        # genre_id = request.GET.get('genre')
-        # print(f"Genre ID: {genre_id}")
-
-        
-
-        # if author_id:
-        #     print(f"Author ID: {author_id}")
-        #     books = books.filter(author__id=author_id)
-
-        # if genre_id:
-        #     print(f"Genre ID: {genre_id}")
-        #     books = books.filter(genre__id=genre_id)
-
         return render(
             request,
             'minilibrary/minilibrary.html',
